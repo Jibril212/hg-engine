@@ -10,7 +10,7 @@
 .include "asm/include/species.inc"
 
 
-// all the mon personal data.  learnsets are specifically in data/mon/learnsets.json
+// all the mon personal data.  tm learnsets are specifically in tmlearnset.txt
 // basestats and evyields fields are formatted as such:  hp atk def speed spatk spdef
 
 
@@ -3008,7 +3008,7 @@ mondata SPECIES_AERODACTYL, "Aerodactyl"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
-    abilities ABILITY_ROCK_HEAD, ABILITY_PRESSURE
+    abilities ABILITY_ROCK_HEAD, ABILITY_RECKLESS
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_AERODACTYL, "A vicious Pokémon from the distant\npast, it appears to have flown by\nspreading its wings and gliding."
