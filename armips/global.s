@@ -20,6 +20,9 @@
 .include "armips/asm/overworlds.s" // code for overworlds, specifically repointing gOWTagToFileNum and making dimorphism a byte instead of a halfword.
 .include "armips/asm/swarms.s" // modify swarms
 
+//custom asm scripts
+.include "armips/asm/custom/mart_items.s"
+
 .include "armips/data/starters.s" // data definitions for which species to use for the starter Pokemon
 .include "armips/asm/tm_palettes.s" // allows editing of pallete table for TMs
 .include "armips/asm/hidden_items.s" // allows editing of hidden items for Dowsing Machine
