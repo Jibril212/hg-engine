@@ -249,13 +249,13 @@ trainerdata 7, "Irwin"
 
 trainerdata 8, "Joey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_YOUNGSTER
+    trainerclass TRAINERCLASS_RUIN_MANIAC
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | 0
+    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
     battletype SINGLE_BATTLE
     endentry
 
@@ -270,13 +270,13 @@ trainerdata 8, "Joey"
 
 trainerdata 9, "Elaine"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SWIMMER_F
+    trainerclass TRAINERCLASS_ACE_TRAINER_F_GS
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | 0
+    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
     battletype SINGLE_BATTLE
     endentry
 
@@ -291,14 +291,14 @@ trainerdata 9, "Elaine"
 
 trainerdata 10, "Amy & Mimi"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_TWINS
+    trainerclass TRAINERCLASS_CAMPER
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | 0
-    battletype DOUBLE_BATTLE
+    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
+    battletype SINGLE_BATTLE
     endentry
 
     party 10
@@ -8421,7 +8421,7 @@ trainerdata 259, "Blaine"
         ballseal 0
     endparty
 
-trainerdata 260, "Red"
+trainerdata 260, "Gold"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PKMN_TRAINER_RED
     nummons 6
@@ -9977,7 +9977,7 @@ trainerdata 289, "Silver"
         ballseal 0
     endparty
 
-trainerdata 290, "Li"
+trainerdata 290, "Charon"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass TRAINERCLASS_ELDER
     nummons 3
@@ -24103,7 +24103,7 @@ trainerdata 712, "Falkner"
     item ITEM_FULL_RESTORE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype SINGLE_BATTLE
+    battletype DOUBLE_BATTLE
     endentry
 
     party 712
