@@ -11177,7 +11177,11 @@ movedata MOVE_AURORA_VEIL, "Aurora Veil"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_AURORA_VEIL, "---"
+.if SNOW_WARNING_GENERATION >= 9
+    movedescription MOVE_AURORA_VEIL, "This move reduces \ndamage from physical \nand special moves for \nfive turns. This can be \nused only when it is snowing."
+.else
+    movedescription MOVE_AURORA_VEIL, "This move reduces \ndamage from physical \nand special moves for \nfive turns. This can be \nused only in a hailstorm."
+.endif
 
 movedatalongname MOVE_SINISTER_ARROW_RAID, "Sinister Raid", "Sinister Arrow Raid"
     battleeffect MOVE_EFFECT_HIT
