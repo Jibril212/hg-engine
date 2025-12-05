@@ -509,6 +509,7 @@ arm9 DestroyHeap_hook 0201AA24 3
 #endif
 
 0012 TrainerAI_PickCommand_hook 0225E10C 0
+0012 BattleAI_PostKOSwitchIn 02258800 2
 
 # expand metronome move pool
 0012 load_max_move_num_metronome 022408AC 0
