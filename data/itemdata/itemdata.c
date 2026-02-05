@@ -42654,7 +42654,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GENGARITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -42719,7 +42719,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GARDEVOIRITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -42784,7 +42784,7 @@ const ITEMDATA __data[] =
 
 [ITEM_AMPHAROSITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -42849,7 +42849,7 @@ const ITEMDATA __data[] =
 
 [ITEM_VENUSAURITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -42914,7 +42914,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHARIZARDITE_X] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -42979,7 +42979,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BLASTOISINITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43044,7 +43044,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MEWTWONITE_X] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43109,7 +43109,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MEWTWONITE_Y] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43174,7 +43174,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BLAZIKENITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43239,7 +43239,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MEDICHAMITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43304,7 +43304,7 @@ const ITEMDATA __data[] =
 
 [ITEM_HOUNDOOMINITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43369,7 +43369,7 @@ const ITEMDATA __data[] =
 
 [ITEM_AGGRONITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43434,7 +43434,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BANETTITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43499,7 +43499,7 @@ const ITEMDATA __data[] =
 
 [ITEM_TYRANITARITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43564,7 +43564,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SCIZORITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43629,7 +43629,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PINSIRITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43694,7 +43694,7 @@ const ITEMDATA __data[] =
 
 [ITEM_AERODACTYLITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43759,7 +43759,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LUCARIONITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43824,7 +43824,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ABOMASITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43889,7 +43889,7 @@ const ITEMDATA __data[] =
 
 [ITEM_KANGASKHANITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -43954,7 +43954,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GYARADOSITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44019,7 +44019,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ABSOLITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44084,7 +44084,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHARIZARDITE_Y] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44149,7 +44149,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ALAKAZITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44214,7 +44214,7 @@ const ITEMDATA __data[] =
 
 [ITEM_HERACRONITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44279,7 +44279,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAWILITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44344,7 +44344,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MANECTITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44409,7 +44409,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GARCHOMPITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44474,7 +44474,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LATIASITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -44539,7 +44539,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LATIOSITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -48894,7 +48894,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SWAMPERTITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -48959,7 +48959,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SCEPTILITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49024,7 +49024,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SABLENITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49089,7 +49089,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ALTARIANITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49154,7 +49154,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GALLADITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49219,7 +49219,7 @@ const ITEMDATA __data[] =
 
 [ITEM_AUDINITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49284,7 +49284,7 @@ const ITEMDATA __data[] =
 
 [ITEM_METAGROSSITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49349,7 +49349,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SHARPEDONITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49414,7 +49414,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SLOWBRONITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49479,7 +49479,7 @@ const ITEMDATA __data[] =
 
 [ITEM_STEELIXITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49544,7 +49544,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PIDGEOTITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49609,7 +49609,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GLALITITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49674,7 +49674,7 @@ const ITEMDATA __data[] =
 
 [ITEM_DIANCITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49869,7 +49869,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CAMERUPTITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49934,7 +49934,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LOPUNNITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -49999,7 +49999,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SALAMENCITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -50064,7 +50064,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BEEDRILLITE] =
 {
-    .price = 9500,
+    .price = 10000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80029,7 +80029,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LONELY_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80094,7 +80094,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ADAMANT_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80159,7 +80159,7 @@ const ITEMDATA __data[] =
 
 [ITEM_NAUGHTY_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80224,7 +80224,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BRAVE_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80289,7 +80289,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BOLD_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80354,7 +80354,7 @@ const ITEMDATA __data[] =
 
 [ITEM_IMPISH_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80419,7 +80419,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LAX_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80484,7 +80484,7 @@ const ITEMDATA __data[] =
 
 [ITEM_RELAXED_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80549,7 +80549,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MODEST_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80614,7 +80614,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MILD_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80679,7 +80679,7 @@ const ITEMDATA __data[] =
 
 [ITEM_RASH_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80744,7 +80744,7 @@ const ITEMDATA __data[] =
 
 [ITEM_QUIET_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80809,7 +80809,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CALM_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80874,7 +80874,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GENTLE_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -80939,7 +80939,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CAREFUL_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81004,7 +81004,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SASSY_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81069,7 +81069,7 @@ const ITEMDATA __data[] =
 
 [ITEM_TIMID_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81134,7 +81134,7 @@ const ITEMDATA __data[] =
 
 [ITEM_HASTY_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81199,7 +81199,7 @@ const ITEMDATA __data[] =
 
 [ITEM_JOLLY_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81264,7 +81264,7 @@ const ITEMDATA __data[] =
 
 [ITEM_NAIVE_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -81329,7 +81329,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SERIOUS_MINT] =
 {
-    .price = 2500,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
