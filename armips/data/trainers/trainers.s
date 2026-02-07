@@ -370,7 +370,6 @@ trainerdata 9, "Maureen"
         abilityslot 0
         level 67
         pokemon SPECIES_TOGEKISS
-        item ITEM_LEFTOVERS
         move MOVE_MOONBLAST
         move MOVE_AIR_SLASH
         move MOVE_AURA_SPHERE
@@ -379,7 +378,6 @@ trainerdata 9, "Maureen"
         ball ITEM_POKE_BALL
         setivs 8, 8, 8, 8, 8, 8 // hp, atk, def, spd, spatk, spdef
         setevs 0, 0, 0, 0, 0, 0
-        nature NATURE_BOLD
         shinylock 0 // mon will be forced shiny
         ballseal 0
     endparty
