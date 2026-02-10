@@ -808,12 +808,27 @@ _0A8C:
     goto _0DF0
 
 _0AD1:
-    menu_item_add 66, 255, 2
+    menu_item_add 65, 255, 2
+    menu_item_add 66, 255, 3
     menu_exec
     switch VAR_SPECIAL_x8006
     case 0, _0B01
     case 1, _0C23
+    case 2, _pcheal
     goto _0DF0
+
+_pcheal:
+    closemsg
+    fade_screen 6, 1, 0, RGB_BLACK
+    wait_fade
+    scrcmd_436
+    play_fanfare SEQ_ME_ASA
+    wait_fanfare
+    heal_party
+    scrcmd_150
+    fade_screen 6, 1, 1, RGB_BLACK
+    wait_fade 
+    goto _0A2E
 
 _0B01:
     play_se SEQ_SE_DP_PC_LOGIN
