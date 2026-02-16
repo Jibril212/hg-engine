@@ -2189,7 +2189,7 @@ mondata SPECIES_EXEGGUTOR, "Exeggutor"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_CHLOROPHYLL, ABILITY_NONE
+    abilities ABILITY_CHLOROPHYLL, ABILITY_HARVEST
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_EXEGGUTOR, "Its three heads think independently.\nHowever, they are friendly and\nnever appear to squabble."
