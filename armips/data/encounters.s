@@ -10,13 +10,13 @@
 
 encounterdata   0   // New Bark Town
 
-walkrate 0
-surfrate 15
+walkrate 20
+surfrate 10
 rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_NONE
@@ -69,11 +69,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_STARMIE, 66, 68
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_DONDOZO, 66, 68
+    encounter SPECIES_DONDOZO, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -94,11 +94,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     encounter SPECIES_CHINCHOU, 20, 20
 
 // super rod encounters
-    encounter SPECIES_CHINCHOU, 40, 40
-    encounter SPECIES_SHELLDER, 40, 40
-    encounter SPECIES_TENTACRUEL, 40, 40
-    encounter SPECIES_LANTURN, 40, 40
-    encounter SPECIES_TENTACRUEL, 40, 40
+    encounter SPECIES_QWILFISH, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_TATSUGIRI, 66, 68
+    encounter SPECIES_TATSUGIRI, 66, 68
+    encounter SPECIES_TATSUGIRI, 66, 68
 
 // swarm grass
     pokemon SPECIES_NONE
@@ -120,7 +120,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_DONPHAN
@@ -173,36 +173,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_FLOATZEL, 65, 69
-    encounter SPECIES_POLIWRATH, 65, 69
-    encounter SPECIES_GOLISOPOD, 65, 69
-    encounter SPECIES_GOLISOPOD, 65, 69
-    encounter SPECIES_GOLISOPOD, 65, 69
+    encounter SPECIES_FLOATZEL, 66, 68
+    encounter SPECIES_POLIWRATH, 66, 68
+    encounter SPECIES_GOLISOPOD, 66, 68
+    encounter SPECIES_GOLISOPOD, 66, 68
+    encounter SPECIES_GOLISOPOD, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_QWILFISH, 65, 69
-    encounter SPECIES_KINGLER, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
+    encounter SPECIES_QWILFISH, 66, 68
+    encounter SPECIES_KINGLER, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
 
 // good rod encounters
-    encounter SPECIES_WHISCASH, 65, 69
-    encounter SPECIES_GYARADOS, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
-    encounter SPECIES_CRAWDAUNT, 65, 69
+    encounter SPECIES_WHISCASH, 66, 68
+    encounter SPECIES_GYARADOS, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
 
 // super rod encounters
-    encounter SPECIES_GOREBYSS, 65, 69
-    encounter SPECIES_HUNTAIL, 65, 69
-    encounter SPECIES_WHISCASH, 65, 69
-    encounter SPECIES_WHISCASH, 65, 69
-    encounter SPECIES_WHISCASH, 65, 69
+    encounter SPECIES_GYARADOS, 66, 68
+    encounter SPECIES_CRAWDAUNT, 66, 68
+    encounter SPECIES_WHISCASH, 66, 68
+    encounter SPECIES_WHISCASH, 66, 68
+    encounter SPECIES_WHISCASH, 66, 68
 
 // swarm grass
     pokemon SPECIES_NONE
@@ -224,7 +224,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_RHYDON
@@ -277,36 +277,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_KINGDRA, 65, 69
-    encounter SPECIES_MILOTIC, 65, 69
-    encounter SPECIES_DRACOVISH, 65, 69
-    encounter SPECIES_DRACOVISH, 65, 69
-    encounter SPECIES_DRACOVISH, 65, 69
+    encounter SPECIES_KINGDRA, 66, 68
+    encounter SPECIES_MILOTIC, 66, 68
+    encounter SPECIES_DRACOVISH, 66, 68
+    encounter SPECIES_DRACOVISH, 66, 68
+    encounter SPECIES_DRACOVISH, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_CLAWITZER, 65, 69
-    encounter SPECIES_RELICANTH, 65, 69
-    encounter SPECIES_BARBARACLE, 65, 69
-    encounter SPECIES_BARBARACLE, 65, 69
-    encounter SPECIES_BARBARACLE, 65, 69
+    encounter SPECIES_CLAWITZER, 66, 68
+    encounter SPECIES_RELICANTH, 66, 68
+    encounter SPECIES_BARBARACLE, 66, 68
+    encounter SPECIES_BARBARACLE, 66, 68
+    encounter SPECIES_BARBARACLE, 66, 68
 
 // good rod encounters
-    encounter SPECIES_MILOTIC, 65, 69
-    encounter SPECIES_CLAWITZER, 65, 69
-    encounter SPECIES_RELICANTH, 65, 69
-    encounter SPECIES_RELICANTH, 65, 69
-    encounter SPECIES_RELICANTH, 65, 69
+    encounter SPECIES_MILOTIC, 66, 68
+    encounter SPECIES_CLAWITZER, 66, 68
+    encounter SPECIES_RELICANTH, 66, 68
+    encounter SPECIES_RELICANTH, 66, 68
+    encounter SPECIES_RELICANTH, 66, 68
 
 // super rod encounters
-    encounter SPECIES_BASCULEGION, 65, 69
-    encounter SPECIES_EELEKTROSS, 65, 69
-    encounter SPECIES_KINGDRA, 65, 69
-    encounter SPECIES_KINGDRA, 65, 69
-    encounter SPECIES_KINGDRA, 65, 69
+    encounter SPECIES_BASCULEGION, 66, 68
+    encounter SPECIES_EELEKTROSS, 66, 68
+    encounter SPECIES_KINGDRA, 66, 68
+    encounter SPECIES_KINGDRA, 66, 68
+    encounter SPECIES_KINGDRA, 66, 68
 
 // swarm grass
     pokemon SPECIES_NONE
@@ -328,7 +328,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_PIDGEOT
@@ -381,10 +381,10 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_NONE, 15, 25
-    encounter SPECIES_NONE, 10, 20
-    encounter SPECIES_NONE, 15, 25
-    encounter SPECIES_NONE, 15, 25
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
     encounter SPECIES_NONE, 32, 32
 
 // rock smash encounters
@@ -432,7 +432,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_NONE
@@ -485,10 +485,10 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_NONE, 15, 25
-    encounter SPECIES_NONE, 10, 20
-    encounter SPECIES_NONE, 15, 25
-    encounter SPECIES_NONE, 15, 25
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
+    encounter SPECIES_NONE, 66, 68
     encounter SPECIES_NONE, 32, 32
 
 // rock smash encounters
@@ -536,7 +536,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_ABOMASNOW
@@ -589,36 +589,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_CLOYSTER, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
-    encounter SPECIES_CRABOMINABLE, 65, 69
-    encounter SPECIES_CRABOMINABLE, 65, 69
-    encounter SPECIES_CRABOMINABLE, 65, 69
+    encounter SPECIES_CLOYSTER, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
+    encounter SPECIES_CRABOMINABLE, 66, 68
+    encounter SPECIES_CRABOMINABLE, 66, 68
+    encounter SPECIES_CRABOMINABLE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_DEWGONG, 65, 69
-    encounter SPECIES_WISHIWASHI, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
+    encounter SPECIES_DEWGONG, 66, 68
+    encounter SPECIES_WISHIWASHI, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
 
 // good rod encounters
-    encounter SPECIES_CLOYSTER, 65, 69
-    encounter SPECIES_DEWGONG, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
-    encounter SPECIES_LAPRAS, 65, 69
+    encounter SPECIES_CLOYSTER, 66, 68
+    encounter SPECIES_DEWGONG, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
+    encounter SPECIES_LAPRAS, 66, 68
 
 // super rod encounters
-    encounter SPECIES_WALREIN, 65, 69
-    encounter SPECIES_WISHIWASHI, 65, 69
-    encounter SPECIES_ARCTOVISH, 65, 69
-    encounter SPECIES_ARCTOVISH, 65, 69
-    encounter SPECIES_ARCTOVISH, 65, 69
+    encounter SPECIES_WALREIN, 66, 68
+    encounter SPECIES_WISHIWASHI, 66, 68
+    encounter SPECIES_ARCTOVISH, 66, 68
+    encounter SPECIES_ARCTOVISH, 66, 68
+    encounter SPECIES_ARCTOVISH, 66, 68
 
 // swarm grass
     pokemon SPECIES_NONE
@@ -640,7 +640,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_SHIFTRY
@@ -693,36 +693,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_MEDITITE
 
 // surf encounters
-    encounter SPECIES_AZUMARILL, 65, 69
-    encounter SPECIES_SLOWBRO, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
+    encounter SPECIES_AZUMARILL, 66, 68
+    encounter SPECIES_SLOWBRO, 66, 68
+    encounter SPECIES_STARMIE, 66, 68
+    encounter SPECIES_STARMIE, 66, 68
+    encounter SPECIES_STARMIE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_SEAKING, 65, 69
-    encounter SPECIES_LUVDISC, 65, 69
-    encounter SPECIES_OCTILLERY, 65, 69
-    encounter SPECIES_OCTILLERY, 65, 69
-    encounter SPECIES_OCTILLERY, 65, 69
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_LUVDISC, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
 
 // good rod encounters
-    encounter SPECIES_OCTILLERY, 65, 69
-    encounter SPECIES_SEAKING, 65, 69
-    encounter SPECIES_SHARPEDO, 65, 69
-    encounter SPECIES_SHARPEDO, 65, 69
-    encounter SPECIES_SHARPEDO, 65, 69
+    encounter SPECIES_OCTILLERY, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SHARPEDO, 66, 68
+    encounter SPECIES_SHARPEDO, 66, 68
+    encounter SPECIES_SHARPEDO, 66, 68
 
 // super rod encounters
-    encounter SPECIES_SHARPEDO, 65, 69
-    encounter SPECIES_BARRASKEWDA, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
-    encounter SPECIES_STARMIE, 65, 69
+    encounter SPECIES_SHARPEDO, 66, 68
+    encounter SPECIES_BARRASKEWDA, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
+    encounter SPECIES_OCTILLERY, 66, 68
 
 // swarm grass
     pokemon SPECIES_RATTATA
@@ -744,7 +744,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_RATTATA
@@ -797,36 +797,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_MEDITITE
 
 // surf encounters
-    encounter SPECIES_PELIPPER, 65, 69
-    encounter SPECIES_SWANNA, 65, 69
-    encounter SPECIES_CRAMORANT, 65, 69
-    encounter SPECIES_CRAMORANT, 65, 69
-    encounter SPECIES_CRAMORANT, 65, 69
+    encounter SPECIES_PELIPPER, 66, 68
+    encounter SPECIES_SWANNA, 66, 68
+    encounter SPECIES_CRAMORANT, 66, 68
+    encounter SPECIES_CRAMORANT, 66, 68
+    encounter SPECIES_CRAMORANT, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_BASCULIN, 65, 69
-    encounter SPECIES_LUMINEON, 65, 69
-    encounter SPECIES_ALOMOMOLA, 65, 69
-    encounter SPECIES_ALOMOMOLA, 65, 69
-    encounter SPECIES_ALOMOMOLA, 65, 69
+    encounter SPECIES_BASCULIN, 66, 68
+    encounter SPECIES_LUMINEON, 66, 68
+    encounter SPECIES_ALOMOMOLA, 66, 68
+    encounter SPECIES_ALOMOMOLA, 66, 68
+    encounter SPECIES_ALOMOMOLA, 66, 68
 
 // good rod encounters
-    encounter SPECIES_POLITOED, 65, 69
-    encounter SPECIES_PRIMARINA, 65, 69
-    encounter SPECIES_LUMINEON, 65, 69
-    encounter SPECIES_LUMINEON, 65, 69
-    encounter SPECIES_LUMINEON, 65, 69
+    encounter SPECIES_POLITOED, 66, 68
+    encounter SPECIES_PRIMARINA, 66, 68
+    encounter SPECIES_LUMINEON, 66, 68
+    encounter SPECIES_LUMINEON, 66, 68
+    encounter SPECIES_LUMINEON, 66, 68
 
 // super rod encounters
-    encounter SPECIES_ALOMOMOLA, 65, 69
-    encounter SPECIES_MANTINE, 65, 69
-    encounter SPECIES_PHIONE, 65, 69
-    encounter SPECIES_PHIONE, 65, 69
-    encounter SPECIES_PHIONE, 65, 69
+    encounter SPECIES_ALOMOMOLA, 66, 68
+    encounter SPECIES_MANTINE, 66, 68
+    encounter SPECIES_PHIONE, 66, 68
+    encounter SPECIES_PHIONE, 66, 68
+    encounter SPECIES_PHIONE, 66, 68
 
 // swarm grass
     pokemon SPECIES_RATTATA
@@ -848,7 +848,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_BRELOOM
@@ -901,36 +901,36 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_LUDICOLO, 65, 69
-    encounter SPECIES_QUAGSIRE, 65, 69
-    encounter SPECIES_GASTRODON, 65, 69
-    encounter SPECIES_GASTRODON, 65, 69
-    encounter SPECIES_GASTRODON, 65, 69
+    encounter SPECIES_LUDICOLO, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_GASTRODON, 66, 68
+    encounter SPECIES_GASTRODON, 66, 68
+    encounter SPECIES_GASTRODON, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_LANTURN, 65, 69
-    encounter SPECIES_SEISMITOAD, 65, 69
-    encounter SPECIES_TENTACRUEL, 65, 69
-    encounter SPECIES_TENTACRUEL, 65, 69
-    encounter SPECIES_TENTACRUEL, 65, 69
+    encounter SPECIES_LANTURN, 66, 68
+    encounter SPECIES_SEISMITOAD, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // good rod encounters
-    encounter SPECIES_TENTACRUEL, 65, 69
-    encounter SPECIES_ARAQUANID, 65, 69
-    encounter SPECIES_LANTURN, 65, 69
-    encounter SPECIES_LANTURN, 65, 69
-    encounter SPECIES_LANTURN, 65, 69
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_ARAQUANID, 66, 68
+    encounter SPECIES_LANTURN, 66, 68
+    encounter SPECIES_LANTURN, 66, 68
+    encounter SPECIES_LANTURN, 66, 68
 
 // super rod encounters
-    encounter SPECIES_JELLICENT, 65, 69
-    encounter SPECIES_DRAGALGE, 65, 69
-    encounter SPECIES_TOXAPEX, 65, 69
-    encounter SPECIES_TOXAPEX, 65, 69
-    encounter SPECIES_TOXAPEX, 65, 69
+    encounter SPECIES_JELLICENT, 66, 68
+    encounter SPECIES_DRAGALGE, 66, 68
+    encounter SPECIES_TOXAPEX, 66, 68
+    encounter SPECIES_TOXAPEX, 66, 68
+    encounter SPECIES_TOXAPEX, 66, 68
 
 // swarm grass
     pokemon SPECIES_BELLSPROUT
@@ -952,7 +952,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_DURANT
@@ -1005,11 +1005,11 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_WOOPER, 10, 20
-    encounter SPECIES_QUAGSIRE, 15, 25
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
+    encounter SPECIES_WOOPER, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_GEODUDE, 8, 14
@@ -1056,7 +1056,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_HEATMOR
@@ -1160,7 +1160,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_UNOWN
@@ -1264,7 +1264,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_TURTONATOR
@@ -1368,7 +1368,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_RAPIDASH
@@ -1472,7 +1472,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_BEEDRILL
@@ -1525,11 +1525,11 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_WOOPER, 10, 20
-    encounter SPECIES_QUAGSIRE, 15, 25
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
+    encounter SPECIES_WOOPER, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -1576,7 +1576,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_BANETTE
@@ -1629,11 +1629,11 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_WOOPER, 10, 20
-    encounter SPECIES_QUAGSIRE, 15, 25
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
-    encounter SPECIES_QUAGSIRE, 10, 20
+    encounter SPECIES_WOOPER, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -1680,7 +1680,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_GOLURK
@@ -1733,11 +1733,11 @@ walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_QUAGSIRE, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_QUAGSIRE, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -1784,7 +1784,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 65, 65, 66, 66, 67, 67, 67, 68, 68, 68, 69, 69
+walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
 
 // morning encounter slots
     pokemon SPECIES_ALTARIA
@@ -1941,8 +1941,8 @@ walklevels 5, 6, 5, 6, 7, 7, 6, 6, 8, 8, 8, 8
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_SLOWPOKE, 10, 20
-    encounter SPECIES_SLOWPOKE, 15, 25
+    encounter SPECIES_SLOWPOKE, 66, 68
+    encounter SPECIES_SLOWPOKE, 66, 68
     encounter SPECIES_SLOWPOKE, 5, 15
     encounter SPECIES_SLOWPOKE, 5, 15
     encounter SPECIES_SLOWPOKE, 5, 15
@@ -2045,10 +2045,10 @@ walklevels 21, 23, 21, 23, 19, 19, 21, 21, 23, 23, 23, 23
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_SLOWPOKE, 10, 20
-    encounter SPECIES_SLOWPOKE, 15, 25
-    encounter SPECIES_SLOWBRO, 15, 25
-    encounter SPECIES_SLOWBRO, 15, 25
+    encounter SPECIES_SLOWPOKE, 66, 68
+    encounter SPECIES_SLOWPOKE, 66, 68
+    encounter SPECIES_SLOWBRO, 66, 68
+    encounter SPECIES_SLOWBRO, 66, 68
     encounter SPECIES_SLOWBRO, 30, 30
 
 // rock smash encounters
@@ -2149,11 +2149,11 @@ walklevels 5, 6, 5, 6, 6, 6, 5, 5, 5, 6, 5, 6
     pokemon SPECIES_CARNIVINE
 
 // surf encounters
-    encounter SPECIES_PSYDUCK, 10, 20
+    encounter SPECIES_PSYDUCK, 66, 68
     encounter SPECIES_PSYDUCK, 5, 15
-    encounter SPECIES_GOLDUCK, 10, 20
-    encounter SPECIES_GOLDUCK, 10, 20
-    encounter SPECIES_GOLDUCK, 10, 20
+    encounter SPECIES_GOLDUCK, 66, 68
+    encounter SPECIES_GOLDUCK, 66, 68
+    encounter SPECIES_GOLDUCK, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -2253,10 +2253,10 @@ walklevels 10, 11, 10, 11, 12, 12, 10, 10, 13, 10, 13, 10
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
     encounter SPECIES_TENTACRUEL, 29, 29
 
 // rock smash encounters
@@ -2357,10 +2357,10 @@ walklevels 12, 12, 12, 12, 14, 14, 10, 10, 14, 10, 14, 12
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_PSYDUCK, 15, 25
-    encounter SPECIES_PSYDUCK, 10, 20
-    encounter SPECIES_GOLDUCK, 15, 25
-    encounter SPECIES_GOLDUCK, 15, 25
+    encounter SPECIES_PSYDUCK, 66, 68
+    encounter SPECIES_PSYDUCK, 66, 68
+    encounter SPECIES_GOLDUCK, 66, 68
+    encounter SPECIES_GOLDUCK, 66, 68
     encounter SPECIES_GOLDUCK, 31, 31
 
 // rock smash encounters
@@ -2877,11 +2877,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_POLIWAG, 15, 25
-    encounter SPECIES_POLIWAG, 10, 20
-    encounter SPECIES_POLIWHIRL, 15, 25
-    encounter SPECIES_POLIWHIRL, 15, 25
-    encounter SPECIES_POLIWHIRL, 15, 25
+    encounter SPECIES_POLIWAG, 66, 68
+    encounter SPECIES_POLIWAG, 66, 68
+    encounter SPECIES_POLIWHIRL, 66, 68
+    encounter SPECIES_POLIWHIRL, 66, 68
+    encounter SPECIES_POLIWHIRL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -4229,11 +4229,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -4333,11 +4333,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -4437,11 +4437,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_MANTINE, 15, 25
-    encounter SPECIES_MANTINE, 15, 25
-    encounter SPECIES_MANTINE, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_MANTINE, 66, 68
+    encounter SPECIES_MANTINE, 66, 68
+    encounter SPECIES_MANTINE, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -4541,11 +4541,11 @@ walklevels 22, 23, 22, 23, 24, 24, 22, 22, 23, 24, 23, 24
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_HORSEA, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_HORSEA, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -4853,10 +4853,10 @@ walklevels 22, 23, 22, 23, 24, 24, 22, 22, 23, 24, 23, 24
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_HORSEA, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_SEADRA, 15, 25
-    encounter SPECIES_SEADRA, 15, 25
+    encounter SPECIES_HORSEA, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_SEADRA, 66, 68
+    encounter SPECIES_SEADRA, 66, 68
     encounter SPECIES_SEADRA, 30, 30
 
 // rock smash encounters
@@ -5373,11 +5373,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_TENTACOOL, 10, 20
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
-    encounter SPECIES_TENTACRUEL, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
+    encounter SPECIES_TENTACRUEL, 66, 68
 
 // rock smash encounters
     encounter SPECIES_KRABBY, 15, 24
@@ -5477,11 +5477,11 @@ walklevels 15, 13, 15, 13, 14, 14, 16, 16, 15, 17, 15, 17
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_GOLDEEN, 15, 25
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -5581,11 +5581,11 @@ walklevels 13, 15, 13, 15, 14, 14, 14, 14, 14, 16, 14, 15
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_GOLDEEN, 15, 25
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -5789,7 +5789,7 @@ walklevels 31, 32, 31, 32, 31, 31, 30, 30, 28, 30, 28, 30
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_GOLDEEN, 15, 25
+    encounter SPECIES_GOLDEEN, 66, 68
     encounter SPECIES_GOLDEEN, 20, 30
     encounter SPECIES_SEAKING, 20, 30
     encounter SPECIES_SEAKING, 20, 30
@@ -5893,11 +5893,11 @@ walklevels 15, 17, 15, 17, 16, 16, 16, 16, 16, 16, 16, 16
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_GOLDEEN, 15, 25
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
-    encounter SPECIES_SEAKING, 15, 25
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
+    encounter SPECIES_SEAKING, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -5997,8 +5997,8 @@ walklevels 15, 15, 15, 15, 17, 17, 15, 15, 16, 17, 16, 17
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 15, 25
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_MAGIKARP, 50, 50
@@ -6101,11 +6101,11 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
-    encounter SPECIES_GYARADOS, 10, 20
-    encounter SPECIES_GYARADOS, 10, 20
-    encounter SPECIES_GYARADOS, 10, 20
+    encounter SPECIES_GYARADOS, 66, 68
+    encounter SPECIES_GYARADOS, 66, 68
+    encounter SPECIES_GYARADOS, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -6206,7 +6206,7 @@ walklevels 23, 22, 23, 22, 22, 22, 24, 24, 24, 26, 24, 26
 
 // surf encounters
     encounter SPECIES_POLIWAG, 20, 30
-    encounter SPECIES_POLIWAG, 15, 25
+    encounter SPECIES_POLIWAG, 66, 68
     encounter SPECIES_POLIWHIRL, 20, 30
     encounter SPECIES_POLIWHIRL, 20, 30
     encounter SPECIES_POLIWHIRL, 20, 30
@@ -6829,7 +6829,7 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_MAGIKARP, 2, 10
     encounter SPECIES_MAGIKARP, 2, 10
@@ -6933,7 +6933,7 @@ walklevels 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     pokemon SPECIES_NONE
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_DRATINI, 5, 15
     encounter SPECIES_DRATINI, 5, 15
@@ -7037,8 +7037,8 @@ walklevels 23, 23, 23, 23, 24, 24, 20, 20, 25, 27, 25, 27
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 15, 25
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 2, 10
     encounter SPECIES_MAGIKARP, 2, 10
     encounter SPECIES_MAGIKARP, 2, 10
@@ -7245,7 +7245,7 @@ walklevels 3, 2, 3, 2, 2, 2, 4, 4, 3, 4, 3, 4
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_MAGIKARP, 2, 10
     encounter SPECIES_MAGIKARP, 2, 10
@@ -7349,7 +7349,7 @@ walklevels 23, 23, 23, 23, 25, 25, 20, 20, 25, 23, 25, 23
     pokemon SPECIES_CHINGLING
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
     encounter SPECIES_MAGIKARP, 5, 15
     encounter SPECIES_MAGIKARP, 2, 10
     encounter SPECIES_MAGIKARP, 2, 10
@@ -7453,11 +7453,11 @@ walklevels 35, 35, 34, 33, 32, 31, 32, 31, 34, 31, 33, 40
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_TENTACOOL, 15, 25
-    encounter SPECIES_SEEL, 10, 20
-    encounter SPECIES_STARYU, 15, 25
-    encounter SPECIES_STARYU, 15, 25
-    encounter SPECIES_STARYU, 15, 25
+    encounter SPECIES_TENTACOOL, 66, 68
+    encounter SPECIES_SEEL, 66, 68
+    encounter SPECIES_STARYU, 66, 68
+    encounter SPECIES_STARYU, 66, 68
+    encounter SPECIES_STARYU, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
@@ -9533,36 +9533,36 @@ walklevels 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
     pokemon SPECIES_BIDOOF
 
 // surf encounters
-    encounter SPECIES_MAGIKARP, 10, 20
-    encounter SPECIES_MAGIKARP, 10, 20
-    encounter SPECIES_MAGIKARP, 10, 20
-    encounter SPECIES_MAGIKARP, 10, 20
-    encounter SPECIES_MAGIKARP, 10, 20
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
+    encounter SPECIES_MAGIKARP, 66, 68
 
 // rock smash encounters
     encounter SPECIES_NONE, 0, 0
     encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
 
 // good rod encounters
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
 
 // super rod encounters
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
-    encounter SPECIES_GOLDEEN, 10, 20
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
+    encounter SPECIES_GOLDEEN, 66, 68
 
 // swarm grass
     pokemon SPECIES_RATTATA
