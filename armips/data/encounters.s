@@ -657,18 +657,18 @@ walklevels 66, 66, 66, 66, 67, 67, 67, 67, 68, 68, 68, 68
     pokemon SPECIES_HONCHKROW
 
 // day encounter slots
-    pokemon SPECIES_LEAVANNY
-    pokemon SPECIES_EMOLGA
-    pokemon SPECIES_AMPHAROS
-    pokemon SPECIES_LUXRAY
-    monwithform SPECIES_LILLIGANT, 1
-    pokemon SPECIES_PORYGON2
-    pokemon SPECIES_GARDEVOIR
-    monwithform SPECIES_EXEGGUTOR, 1
-    pokemon SPECIES_LEAVANNY
-    pokemon SPECIES_PORYGON_Z
-    pokemon SPECIES_PORYGON_Z
-    pokemon SPECIES_GARDEVOIR
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
+    monwithform SPECIES_HONCHKROW, 1
 
 // night encounter slots
     pokemon SPECIES_LUXRAY

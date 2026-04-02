@@ -37629,6 +37629,33 @@ build/pokemonicon/1_1392.NCGR: data/graphics/sprites/terapagos_stellar/icon.png
 ICONGFX_OBJS += build/pokemonicon/1_1392.NCGR
 
 
+build/pokemonpic/1393-00.NCGR: data/graphics/sprites/honchkrow_tohjonian/female/back.png
+	$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_SPRITE)
+build/pokemonpic/1393-01.NCGR: data/graphics/sprites/honchkrow_tohjonian/male/back.png
+	$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_SPRITE)
+build/pokemonpic/1393-02.NCGR: data/graphics/sprites/honchkrow_tohjonian/female/front.png
+	$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_SPRITE)
+build/pokemonpic/1393-03.NCGR: data/graphics/sprites/honchkrow_tohjonian/male/front.png
+	$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_SPRITE)
+build/pokemonpic/1393-04.NCLR: data/graphics/sprites/honchkrow_tohjonian/male/front.png
+	if test -s $<; then \
+		$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_PAL); \
+	elif test -s $(patsubst $(POKEGRA_SPRITES_DIR)/%/male/front.png,$(POKEGRA_SPRITES_DIR)/%/female/front.png,$<); then \
+		$(GFX) $(patsubst $(POKEGRA_SPRITES_DIR)/%/male/front.png,$(POKEGRA_SPRITES_DIR)/%/female/front.png,$<) $@ $(POKEGRA_GFX_FLAGS_PAL); \
+	fi
+build/pokemonpic/1393-05.NCLR: data/graphics/sprites/honchkrow_tohjonian/male/back.png
+	if test -s $<; then \
+		$(GFX) $< $@ $(POKEGRA_GFX_FLAGS_PAL); \
+	elif test -s $(patsubst $(POKEGRA_SPRITES_DIR)/%/male/back.png,$(POKEGRA_SPRITES_DIR)/%/female/back.png,$<); then \
+		$(GFX) $(patsubst $(POKEGRA_SPRITES_DIR)/%/male/back.png,$(POKEGRA_SPRITES_DIR)/%/female/back.png,$<) $@ $(POKEGRA_GFX_FLAGS_PAL); \
+	fi
+POKEGRA_DEPENDENCIES += build/pokemonpic/1393-00.NCGR build/pokemonpic/1393-01.NCGR build/pokemonpic/1393-02.NCGR build/pokemonpic/1393-03.NCGR build/pokemonpic/1393-04.NCLR build/pokemonpic/1393-05.NCLR
+build/pokemonicon/1_1393.NCGR: data/graphics/sprites/honchkrow_tohjonian/icon.png
+	$(GFX) $< $@ -clobbersize -version101
+
+ICONGFX_OBJS += build/pokemonicon/1_1393.NCGR
+
+
 $(POKEGRA_NARC): $(POKEGRA_DEPENDENCIES)
 	$(NARCHIVE) create $@ $(POKEGRA_BUILD_DIR) -nf
 
@@ -37641,3 +37668,4 @@ $(ICONGFX_NARC): $(ICONGFX_OBJS)
 
 NARC_FILES += $(ICONGFX_NARC)
 REQUIRED_DIRECTORIES += $(ICONGFX_DIR)
+

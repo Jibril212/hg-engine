@@ -27681,3 +27681,23 @@ mondata SPECIES_TERAPAGOS_STELLAR, "-----"
     abilities ABILITY_TERAFORM_ZERO, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
+
+    mondata SPECIES_HONCHKROW_TOHJONIAN, "Honchkrow"
+    basestats 100, 125, 52, 71, 105, 52
+    types TYPE_PSYCHIC, TYPE_FLYING
+    catchrate 30
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 2, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 127
+    eggcycles 20
+    basefriendship 35
+    growthrate GROWTH_MEDIUM_SLOW
+    egggroups EGG_GROUP_FLYING, EGG_GROUP_FLYING
+    abilities ABILITY_MOXIE, ABILITY_SUPER_LUCK
+    runchance 0
+    colorflip BODY_COLOR_BLACK, 0
+    mondexentry SPECIES_HONCHKROW, "It is merciless by nature. It is said\nthat it never forgives the mistakes\nof its MURKROW followers."
+    mondexclassification SPECIES_HONCHKROW, "Big Boss Pokémon"
+    mondexheight SPECIES_HONCHKROW, "2’11”"
+    mondexweight SPECIES_HONCHKROW, "60.2 lbs."

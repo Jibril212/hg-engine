@@ -1400,5 +1400,6 @@
 /* SPECIES_URSALUNA_BLOODMOON                */ .word 3330
 /* SPECIES_TERAPAGOS_TERASTAL                */ .word 160
 /* SPECIES_TERAPAGOS_STELLAR                 */ .word 770
+/* SPECIES_HONCHKROW_TOHJONIAN                         */ .word 273
 
 .close
