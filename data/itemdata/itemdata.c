@@ -14250,7 +14250,7 @@ const ITEMDATA __data[] =
 [ITEM_MENTAL_HERB] =
 {
     ITEM_PRICE(10000),
-    .holdEffect = HOLD_EFFECT_HEAL_INFATUATION,
+    .holdEffect = HOLD_EFFECT_HEAL_MENTAL_CONDITIONS,
     .holdEffectParam = 0,
     .pluckEffect = 0,
     .flingEffect = 25,
