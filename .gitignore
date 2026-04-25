@@ -103,3 +103,4 @@ changelog
 /include/constants/generated/
 test_logs.txt
 *.Identifier
+.scratch/
