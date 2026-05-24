@@ -1,4 +1,4 @@
-// Test: Phantom Force - Semi Invun, hit through Protect
+// Test: Struggle - Technician, Life Orb chip
 #ifndef GET_TEST_CASE_ONLY
 
 #include "../../../../include/battle.h"
@@ -21,12 +21,12 @@ const struct TestBattleScenario BattleTests[] = {
         .terrain = TERRAIN_NONE,
         .playerParty = {
             {
-                .species = SPECIES_DREEPY,
+                .species = SPECIES_SCIZOR,
                 .level = 50,
                 .form = 0,
-                .ability = ABILITY_CLEAR_BODY,
-                .item = ITEM_NONE,
-                .moves = { MOVE_PHANTOM_FORCE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
+                .ability = ABILITY_TECHNICIAN,
+                .item = ITEM_LIFE_ORB,
+                .moves = { MOVE_STRUGGLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
                 .hp = FULL_HP,
                 .status = 0,
                 .condition2 = 0,
@@ -38,12 +38,12 @@ const struct TestBattleScenario BattleTests[] = {
             { .species = SPECIES_NONE },
             { .species = SPECIES_NONE } },
         .enemyParty = { {
-                            .species = SPECIES_INCINEROAR,
+                            .species = SPECIES_GARCHOMP,
                             .level = 50,
                             .form = 0,
-                            .ability = ABILITY_BLAZE,
-                            .item = ITEM_ROCKY_HELMET,
-                            .moves = { MOVE_BITE, MOVE_PROTECT, MOVE_NONE, MOVE_NONE },
+                            .ability = ABILITY_ROUGH_SKIN,
+                            .item = ITEM_NONE,
+                            .moves = { MOVE_SLEEP_TALK, MOVE_NONE, MOVE_NONE, MOVE_NONE },
                             .hp = FULL_HP,
                             .status = 0,
                             .condition2 = 0,
@@ -56,7 +56,7 @@ const struct TestBattleScenario BattleTests[] = {
             { .species = SPECIES_NONE } },
         .playerScript = { {
                               { ACTION_MOVE_SLOT_1, BATTLER_ENEMY_FIRST },
-                              { ACTION_MOVE_SLOT_1, BATTLER_ENEMY_FIRST },
+                              { ACTION_NONE, 0 },
                               { ACTION_NONE, 0 },
                               { ACTION_NONE, 0 },
                               { ACTION_NONE, 0 },
@@ -76,7 +76,7 @@ const struct TestBattleScenario BattleTests[] = {
             } },
         .enemyScript = { {
                              { ACTION_MOVE_SLOT_1, BATTLER_PLAYER_FIRST },
-                             { ACTION_MOVE_SLOT_2, BATTLER_ENEMY_FIRST },
+                             { ACTION_NONE, 0 },
                              { ACTION_NONE, 0 },
                              { ACTION_NONE, 0 },
                              { ACTION_NONE, 0 },
@@ -95,13 +95,11 @@ const struct TestBattleScenario BattleTests[] = {
                 { ACTION_NONE, 0 },
             } },
         .expectations = {
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Dreepy vanished instantly!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The attack of the opposing Incineroar missed!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Incineroar protected itself!" },
-            { .expectationType = EXPECTATION_TYPE_HP_BAR, .battlerIDOrPartySlot = BATTLER_ENEMY_FIRST, .expectationValue.hpTaken = { 18, 18, 19, 19, 19, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 22 } },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "It broke through the opposing Incineroar's protection!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Dreepy is hurt by the opposing Incineroar's Rocky Helmet!" },
+            { .expectationType = EXPECTATION_TYPE_HP_BAR, .battlerIDOrPartySlot = BATTLER_ENEMY_FIRST, .expectationValue.hpTaken = { 49, 49, 51, 51, 52, 52, 52, 53, 53, 55, 55, 56, 56, 57, 57, 58 } },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Garchomp's Rough Skin hurt Scizor!" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Scizor lost some of its HP!" },
         },
+        .knownFailing = TRUE,
     },
 #ifndef GET_TEST_CASE_ONLY
 };
