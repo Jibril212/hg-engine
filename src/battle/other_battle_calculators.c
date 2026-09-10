@@ -1,5 +1,7 @@
-#include "battle.h"
 #include "config.h"
+#include "debug.h"
+#include "types.h"
+
 #include "constants/ability.h"
 #include "constants/battle_message_constants.h"
 #include "constants/battle_script_constants.h"
@@ -9,15 +11,15 @@
 #include "constants/move_effects.h"
 #include "constants/moves.h"
 #include "constants/species.h"
-#include "debug.h"
+
+#include "battle.h"
 #include "overlay.h"
 #include "pokemon.h"
 #include "q412.h"
-#include "types.h"
 
-#include "../../include/trainer_data.h"
 #include "../../include/constants/sndseq.h"
 #include "../../include/constants/trainerclass.h"
+#include "../../include/trainer_data.h"
 
 typedef struct
 {
@@ -1888,6 +1890,8 @@ u8 LONG_CALL UpdateTypeEffectiveness(u32 move_no, u8 defender_type, u8 defaultEf
 {
     if (move_no == MOVE_FREEZE_DRY && defender_type == TYPE_WATER) {
         defaultEffectiveness = TYPE_MUL_SUPER_EFFECTIVE;
+    } else if (move_no == MOVE_THOUSAND_ARROWS && defender_type == TYPE_FLYING) {
+        defaultEffectiveness = TYPE_MUL_NORMAL;
     }
     return defaultEffectiveness;
 }
@@ -2333,7 +2337,7 @@ BOOL BattlerCantSwitch(void *bw, struct BattleStruct *sp, int battlerId)
     }
 
     if (((GetBattlerAbility(sp, battlerId) != ABILITY_LEVITATE
-        && GetBattlerAbility(sp, battlerId) != ABILITY_EELEVATE
+             && GetBattlerAbility(sp, battlerId) != ABILITY_EELEVATE
              && sp->battlemon[battlerId].moveeffect.magnetRiseTurns == 0
              && !HasType(sp, battlerId, TYPE_FLYING))
             || HeldItemHoldEffectGet(sp, battlerId) == HOLD_EFFECT_SPEED_DOWN_GROUNDED
@@ -3660,20 +3664,20 @@ const u16 HealBlockUnusableMoves[] = {
 };
 
 const u16 HealBlockUnusableMoveEffects[] = {
-    MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT, //Absorb, etc
-    MOVE_EFFECT_RECOVER_THREE_QUARTERS_DAMAGE_DEALT, //draining kiss, Oblivion Wing
-    MOVE_EFFECT_RECOVER_FULL_DAMAGE_DEALT, //bouncy bubble
-    MOVE_EFFECT_RECOVER_DAMAGE_SLEEP, //dream eater
-    MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT_BURN_HIT, //matcha gotcha
-    MOVE_EFFECT_RESTORE_HALF_HP, //recover, etc
-    MOVE_EFFECT_HEAL_HALF_REMOVE_FLYING_TYPE, //roost
-    MOVE_EFFECT_HEAL_HALF_DIFFERENT_IN_WEATHER, //synthesis, etc
-    MOVE_EFFECT_RECOVER_HEALTH_AND_SLEEP, //rest
+    MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT, // Absorb, etc
+    MOVE_EFFECT_RECOVER_THREE_QUARTERS_DAMAGE_DEALT, // draining kiss, Oblivion Wing
+    MOVE_EFFECT_RECOVER_FULL_DAMAGE_DEALT, // bouncy bubble
+    MOVE_EFFECT_RECOVER_DAMAGE_SLEEP, // dream eater
+    MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT_BURN_HIT, // matcha gotcha
+    MOVE_EFFECT_RESTORE_HALF_HP, // recover, etc
+    MOVE_EFFECT_HEAL_HALF_REMOVE_FLYING_TYPE, // roost
+    MOVE_EFFECT_HEAL_HALF_DIFFERENT_IN_WEATHER, // synthesis, etc
+    MOVE_EFFECT_RECOVER_HEALTH_AND_SLEEP, // rest
     MOVE_EFFECT_SWALLOW,
-    MOVE_EFFECT_FAINT_FULL_RESTORE_NEXT_MON, //Luna Dance
-    MOVE_EFFECT_FAINT_AND_FULL_HEAL_NEXT_MON, //healing wish
-    MOVE_EFFECT_HEAL_IN_3_TURNS, //wish
-    MOVE_EFFECT_HEAL_TARGET, //heal pulse
+    MOVE_EFFECT_FAINT_FULL_RESTORE_NEXT_MON, // Luna Dance
+    MOVE_EFFECT_FAINT_AND_FULL_HEAL_NEXT_MON, // healing wish
+    MOVE_EFFECT_HEAL_IN_3_TURNS, // wish
+    MOVE_EFFECT_HEAL_TARGET, // heal pulse
     MOVE_EFFECT_LIFE_DEW,
     // TODO Lunar Blessing, Floral Healing
 };
@@ -3686,7 +3690,7 @@ BOOL LONG_CALL BattleContext_CheckMoveHealBlocked(struct BattleSystem *bsys UNUS
 
     if (ctx->battlemon[battlerId].moveeffect.healBlockTurns) {
         for (i = 0; i < NELEMS(HealBlockUnusableMoves); i++) {
-            if (HealBlockUnusableMoves[i] == moveNo) { //TODO: remove once moves are implemented
+            if (HealBlockUnusableMoves[i] == moveNo) { // TODO: remove once moves are implemented
                 ret = TRUE;
                 break;
             }
@@ -4165,27 +4169,7 @@ BOOL LONG_CALL IsPureType(struct BattleStruct *ctx, int battlerId, int type)
 /// @return `TRUE` or `FALSE`
 BOOL LONG_CALL AbilityNoTransform(int ability)
 {
-    switch (ability) {
-    case ABILITY_DISGUISE:
-    case ABILITY_GULP_MISSILE:
-    case ABILITY_ICE_FACE:
-    case ABILITY_NEUTRALIZING_GAS:
-    case ABILITY_HUNGER_SWITCH:
-    case ABILITY_ZERO_TO_HERO:
-    case ABILITY_PROTOSYNTHESIS:
-    case ABILITY_QUARK_DRIVE:
-    case ABILITY_EMBODY_ASPECT:
-    case ABILITY_EMBODY_ASPECT_2:
-    case ABILITY_EMBODY_ASPECT_3:
-    case ABILITY_EMBODY_ASPECT_4:
-    case ABILITY_TERA_SHIFT:
-        return TRUE;
-        break;
-
-    default:
-        break;
-    }
-    return FALSE;
+    return GetAbilityFlags(ability).disabledWhenTransformed;
 }
 
 // TODO: Just use this instead of the Mold Breaker one
@@ -4195,21 +4179,37 @@ u32 LONG_CALL GetBattlerAbility(struct BattleStruct *ctx, int battlerId)
     if (battlerId == BATTLER_NONE) {
         return ABILITY_NONE;
     }
+    BOOL isGrounded = ctx->moveConditionsFlags[ctx->defence_client].grounded;
+    BOOL isGravityOn = (ctx->field_condition & FIELD_CONDITION_GRAVITY);
+    BOOL isIngrained = (ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN);
+
     ability = ctx->battlemon[battlerId].ability;
     if ((ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_ABILITY_SUPPRESSED) && ctx->battlemon[battlerId].ability != ABILITY_MULTITYPE) {
         return ABILITY_NONE;
-    } else if ((ctx->field_condition & FIELD_CONDITION_GRAVITY) && ctx->battlemon[battlerId].ability == ABILITY_LEVITATE) {
+    } else if ((isGrounded || isGravityOn || isIngrained) && ctx->battlemon[battlerId].ability == ABILITY_LEVITATE) {
         return ABILITY_NONE;
-    } else if ((ctx->field_condition & FIELD_CONDITION_GRAVITY) && ctx->battlemon[battlerId].ability == ABILITY_EELEVATE) {
+    } else if ((isGrounded || isGravityOn || isIngrained) && ctx->battlemon[battlerId].ability == ABILITY_EELEVATE) {
         return ABILITY_BEAST_BOOST;
-    } else if ((ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN) && ctx->battlemon[battlerId].ability == ABILITY_LEVITATE) {
-        return ABILITY_NONE;
-    } else if ((ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN) && ctx->battlemon[battlerId].ability == ABILITY_EELEVATE) {
-        return ABILITY_BEAST_BOOST;
-    } else if (AbilityNoTransform(ctx->battlemon[battlerId].ability) && (ctx->battlemon[battlerId].condition2 & STATUS2_TRANSFORM)) {
+    } else if ((ctx->battlemon[battlerId].condition2 & STATUS2_TRANSFORM) && AbilityNoTransform(ctx->battlemon[battlerId].ability)) {
         return ABILITY_NONE;
     }
     return ability;
+}
+
+/// @brief Check if ability causes Trace to fail
+/// @param ability
+/// @return `TRUE` or `FALSE`
+BOOL LONG_CALL AbilityNoTrace(int ability)
+{
+    return GetAbilityFlags(ability).failsTrace;
+}
+
+/// @brief Check if ability causes Skill Swap and Wandering Spirit to fail
+/// @param ability
+/// @return `TRUE` or `FALSE`
+BOOL LONG_CALL AbilityFailSkillSwap(int ability)
+{
+    return GetAbilityFlags(ability).failsSwap;
 }
 
 /// @brief Check if ability can't be suppressed by Gastro Acid or affected by Mummy. See notes for DisabledByNeutralizingGas.
@@ -4218,30 +4218,7 @@ u32 LONG_CALL GetBattlerAbility(struct BattleStruct *ctx, int battlerId)
 /// @return `TRUE` or `FALSE`
 BOOL LONG_CALL AbilityCantSupress(int ability)
 {
-    switch (ability) {
-    case ABILITY_MULTITYPE:
-    case ABILITY_ZEN_MODE:
-    case ABILITY_STANCE_CHANGE:
-    case ABILITY_SHIELDS_DOWN:
-    case ABILITY_SCHOOLING:
-    case ABILITY_DISGUISE:
-    case ABILITY_BATTLE_BOND:
-    case ABILITY_POWER_CONSTRUCT:
-    case ABILITY_COMATOSE:
-    case ABILITY_RKS_SYSTEM:
-    case ABILITY_GULP_MISSILE:
-    case ABILITY_ICE_FACE:
-    case ABILITY_AS_ONE_GLASTRIER:
-    case ABILITY_AS_ONE_SPECTRIER:
-    case ABILITY_ZERO_TO_HERO:
-    case ABILITY_TERA_SHIFT:
-        return TRUE;
-        break;
-
-    default:
-        break;
-    }
-    return FALSE;
+    return GetAbilityFlags(ability).failsSuppress;
 }
 
 void BattleSystem_BufferMessage(struct BattleSystem *bsys, BattleMessage *msg)
@@ -4277,7 +4254,6 @@ BOOL LONG_CALL CheckLegalMimicMove(u16 moveNo)
 
     return sMetronomeMimicMoveBanList[i] == 0xFFFE;
 }
-
 
 BOOL LONG_CALL CheckLegalMetronomeMove(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx UNUSED, int battlerId UNUSED, u16 moveNo)
 {
@@ -4529,7 +4505,7 @@ BOOL LONG_CALL IsAttackerOnField(struct BattleStruct *ctx)
     return TRUE;
 }
 
-int LONG_CALL ov12_022506D4(struct BattleSystem* bw, struct BattleStruct *ctx, int battlerIdAttacker, u16 moveNo, int a4, int range)
+int LONG_CALL ov12_022506D4(struct BattleSystem *bw, struct BattleStruct *ctx, int battlerIdAttacker, u16 moveNo, int a4, int range)
 {
     int battlerIdTarget = BATTLER_NONE;
     int moveRange;
@@ -4616,7 +4592,7 @@ int LONG_CALL ov12_022506D4(struct BattleSystem* bw, struct BattleStruct *ctx, i
     } else if (moveRange == RANGE_RANDOM_OPPONENT || a4 == 1) {
         int battleType = BattleTypeGet(bw);
         int side = IsClientEnemy(bw, battlerIdAttacker) ^ 1;
-        //int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
+        // int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
         int battlerIdOpponents[2];
         battlerIdOpponents[0] = ov12_0223ABB8(bw, battlerIdAttacker, 0);
         battlerIdOpponents[1] = ov12_0223ABB8(bw, battlerIdAttacker, 2);
@@ -4642,9 +4618,9 @@ int LONG_CALL ov12_022506D4(struct BattleSystem* bw, struct BattleStruct *ctx, i
         }
     } else {
         int side = IsClientEnemy(bw, battlerIdAttacker) ^ 1;
-        //int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
+        // int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
         int battlerIdTargetTemp = ctx->playerActions[battlerIdAttacker][1]; //.unk4
-        //BattleSystem_GetMaxBattlers(battleSystem);
+        // BattleSystem_GetMaxBattlers(battleSystem);
 
         if (ctx->current_move_index != MOVE_SNIPE_SHOT
             && (GetBattlerAbility(ctx, battlerIdAttacker) != ABILITY_PROPELLER_TAIL)
@@ -4664,7 +4640,6 @@ int LONG_CALL ov12_022506D4(struct BattleSystem* bw, struct BattleStruct *ctx, i
 
     return battlerIdTarget;
 }
-
 
 void LONG_CALL HandleTransform(struct BattleStruct *sp)
 {
@@ -4731,40 +4706,73 @@ void LONG_CALL PrintBallBlockedMessage(struct tcb_skill_intp_work *data)
 }
 
 // Modifying this switch case allows you to assign any music to victory over a specific trainer class.
-void LONG_CALL PlayTrainerVictoryBGM(struct TrainerData *trainer) {
+void LONG_CALL PlayTrainerVictoryBGM(struct TrainerData *trainer)
+{
     switch (trainer->data.trainerClass) {
-        case TRAINERCLASS_LEADER_FALKNER:
-        case TRAINERCLASS_LEADER_BUGSY:
-        case TRAINERCLASS_LEADER_WHITNEY:
-        case TRAINERCLASS_LEADER_MORTY:
-        case TRAINERCLASS_LEADER_PRYCE:
-        case TRAINERCLASS_LEADER_JASMINE:
-        case TRAINERCLASS_LEADER_CHUCK:
-        case TRAINERCLASS_LEADER_CLAIR:
-        case TRAINERCLASS_CHAMPION:
-        case TRAINERCLASS_ELITE_FOUR_WILL:
-        case TRAINERCLASS_ELITE_FOUR_KAREN:
-        case TRAINERCLASS_ELITE_FOUR_KOGA:
-        case TRAINERCLASS_ELITE_FOUR_BRUNO:
-        case TRAINERCLASS_LEADER_BROCK:
-        case TRAINERCLASS_LEADER_MISTY:
-        case TRAINERCLASS_LEADER_LT_SURGE:
-        case TRAINERCLASS_LEADER_ERIKA:
-        case TRAINERCLASS_LEADER_JANINE:
-        case TRAINERCLASS_LEADER_SABRINA:
-        case TRAINERCLASS_LEADER_BLAINE:
-        case TRAINERCLASS_LEADER_BLUE:
-            PlayBGM(SEQ_GS_WIN3);
-            break;
-        case TRAINERCLASS_TOWER_TYCOON:
-        case TRAINERCLASS_HALL_MATRON:
-        case TRAINERCLASS_FACTORY_HEAD:
-        case TRAINERCLASS_ARCADE_STAR:
-        case TRAINERCLASS_CASTLE_VALET:
-            PlayBGM(SEQ_GS_WINBRAIN);
-            break;
-        default:
-            PlayBGM(SEQ_GS_WIN1);
-            break;
+    case TRAINERCLASS_LEADER_FALKNER:
+    case TRAINERCLASS_LEADER_BUGSY:
+    case TRAINERCLASS_LEADER_WHITNEY:
+    case TRAINERCLASS_LEADER_MORTY:
+    case TRAINERCLASS_LEADER_PRYCE:
+    case TRAINERCLASS_LEADER_JASMINE:
+    case TRAINERCLASS_LEADER_CHUCK:
+    case TRAINERCLASS_LEADER_CLAIR:
+    case TRAINERCLASS_CHAMPION:
+    case TRAINERCLASS_ELITE_FOUR_WILL:
+    case TRAINERCLASS_ELITE_FOUR_KAREN:
+    case TRAINERCLASS_ELITE_FOUR_KOGA:
+    case TRAINERCLASS_ELITE_FOUR_BRUNO:
+    case TRAINERCLASS_LEADER_BROCK:
+    case TRAINERCLASS_LEADER_MISTY:
+    case TRAINERCLASS_LEADER_LT_SURGE:
+    case TRAINERCLASS_LEADER_ERIKA:
+    case TRAINERCLASS_LEADER_JANINE:
+    case TRAINERCLASS_LEADER_SABRINA:
+    case TRAINERCLASS_LEADER_BLAINE:
+    case TRAINERCLASS_LEADER_BLUE:
+        PlayBGM(SEQ_GS_WIN3);
+        break;
+    case TRAINERCLASS_TOWER_TYCOON:
+    case TRAINERCLASS_HALL_MATRON:
+    case TRAINERCLASS_FACTORY_HEAD:
+    case TRAINERCLASS_ARCADE_STAR:
+    case TRAINERCLASS_CASTLE_VALET:
+        PlayBGM(SEQ_GS_WINBRAIN);
+        break;
+    default:
+        PlayBGM(SEQ_GS_WIN1);
+        break;
     }
+}
+
+BOOL LONG_CALL ShouldUseNormalTypeEffCalc(struct BattleStruct *ctx, int attack_client UNUSED, int defence_client, int index)
+{
+    int itemEffect = HeldItemHoldEffectGet(ctx, defence_client);
+    BOOL ret = TRUE;
+
+    if (itemEffect == HOLD_EFFECT_SPEED_DOWN_GROUNDED
+        || (ctx->battlemon[defence_client].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN)
+        || ctx->moveConditionsFlags[ctx->defence_client].grounded) {
+        if (TypeEffectivenessTable[index][1] == TYPE_FLYING && TypeEffectivenessTable[index][2] == TYPE_MUL_NO_EFFECT) {
+            ret = FALSE;
+        }
+    }
+
+    if (ctx->oneTurnFlag[defence_client].roostFlag && TypeEffectivenessTable[index][1] == TYPE_FLYING) {
+        ret = FALSE;
+    }
+
+    if (ctx->field_condition & FIELD_CONDITION_GRAVITY) {
+        if (TypeEffectivenessTable[index][1] == TYPE_FLYING && TypeEffectivenessTable[index][2] == TYPE_MUL_NO_EFFECT) {
+            ret = FALSE;
+        }
+    }
+
+    if (ctx->battlemon[defence_client].effect_of_moves & MOVE_EFFECT_FLAG_MIRACLE_EYE) {
+        if (TypeEffectivenessTable[index][1] == TYPE_DARK && TypeEffectivenessTable[index][2] == TYPE_MUL_NO_EFFECT) {
+            ret = FALSE;
+        }
+    }
+
+    return ret;
 }

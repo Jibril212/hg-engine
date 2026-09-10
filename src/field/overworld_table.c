@@ -1,8 +1,10 @@
+#include "types.h"
+
 #include "constants/file.h"
 #include "constants/pokemon.h"
 #include "constants/species.h"
+
 #include "pokemon.h"
-#include "types.h"
 
 #define OVERWORLD_SIZE_SMALL           0x4E27
 #define OVERWORLD_SIZE_SMALL_NO_SHADOW 0x4E26
@@ -26,6 +28,7 @@
 #define MON_FOLLOWER_ENTRY(species, cbparams) \
     { .tag = MON_OVERWORLD_TAG_START + species, .gfx = MON_OVERWORLD_GFX_START + species, .callback_params = cbparams },
 
+// clang-format off
 struct OVERWORLD_TAG gOWTagToFileNum[] = // skip down a bit to see the parts that are specifically for pokémon
     {
         { .tag = 0, .gfx = 69, .callback_params = 0x1C60 },
@@ -1693,6 +1696,7 @@ struct OVERWORLD_TAG gOWTagToFileNum[] = // skip down a bit to see the parts tha
 
         { 0xFFFF, 0, 0 },
     };
+// clang-format on
 
 // used for HoF/pokeathlon overworlds
 struct OVERWORLD_TAG *grab_overworld_ptr(u16 tag)
@@ -1722,6 +1726,11 @@ u32 grab_overworld_a081_index(u16 species, u32 form, u32 isFemale)
         ret = 1;
     } else {
         tag = get_mon_ow_tag(species, form, isFemale);
+
+        if (form != 0 && grab_overworld_ptr(tag)->tag != tag) {
+            // if we reached the failure case, try again but with form 0
+            tag = get_mon_ow_tag(species, 0, isFemale);
+        }
 
         ret = get_a081_index_from_tag(tag);
     }

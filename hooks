@@ -300,6 +300,7 @@ arm9 GF_Snd_LoadSeqEx 02004784 2
 
 arm9 StoreFieldSysPtr 0203E028 1
 
+arm9 GetItemFieldUseFunc 02064980 2
 
 #ifdef IMPLEMENT_BDHCAM_ROUTINE
 
@@ -354,6 +355,7 @@ arm9 GrabCryNumSpeciesForm 02006A0C 2
 #endif
 
 # need another hook for this one yeah yeah
+0012 ShouldUseNormalTypeEffCalc 02251C74
 0012 ServerDoTypeCalcMod 02251D28
 0012 AITypeCalc 02252054
 0012 GrabMoveTypeForConversion2 0224DD7C 2
@@ -595,6 +597,8 @@ arm9 ScrCmd_WildBattle 02043E5C 1
 0010 TestBattle_AISelectMove 0221BEF4 2
 0010 TestBattle_AIPickCommand 022205BC 2
 0012 TestBattle_PostKOSwitchIn 02258800 2
+0012 TestBattle_ShowParty 0223E8A0 2
+0012 TestBattle_WaitMonSelection 0223E978 2
 0012 CheckTrainerMessage 02250D4C 2
 0012 BattleMessage_ExpandPlaceholders 0223CEF4
 #endif
@@ -631,12 +635,13 @@ arm9 PartyMenu_StartContextMenuButtonPressAnim_FromCursorObj 0207CB9C 3
 0012 BattleMessage_BufferPokemon 0223CE80
 0012 hook_GrabIllusionBoxMonForHpBar 022651AE 3
 
+#ifdef EXPAND_ROAMERS
 # roamers
 arm9 Save_CreateRoamerByID 020676EC 2
 arm9 RoamerLocationSetRandom 02067830 3
 arm9 SpeciesToRoamerIdx 020677F4 1
 arm9 ScrCmd_CreateRoamer 02045264 1
-
+#endif
 
 # encounter
 arm9 EncounterSlot_WildMonSlotRoll_Land 0224768C 0

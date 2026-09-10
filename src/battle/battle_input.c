@@ -1,14 +1,16 @@
-#include "battle.h"
 #include "config.h"
+#include "types.h"
+
 #include "constants/ability.h"
 #include "constants/battle_script_constants.h"
 #include "constants/file.h"
 #include "constants/item.h"
 #include "constants/weather_numbers.h"
+
+#include "battle.h"
 #include "mega.h"
 #include "pokemon.h"
 #include "sprite.h"
-#include "types.h"
 
 // function declarations for this file
 void Sub_PokeIconResourceLoad(struct BI_PARAM *bip);
@@ -681,24 +683,24 @@ u16 TerrainPlatformPalettes[][3] = {
     [TERRAIN_BATTLE_CASTLE] = { 61, 62, 63 },
     [TERRAIN_BATTLE_HALL] = { 64, 65, 66 },
     [TERRAIN_GIRATINA] = { 67, 68, 69 },
-    [TERRAIN_ELECTRIC_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
-    [TERRAIN_MISTY_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
-    [TERRAIN_GRASSY_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
-    [TERRAIN_PSYCHIC_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
+    [TERRAIN_ELECTRIC_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), BATTLE_GFX_TRANSPARENT_TERRAIN + 1, (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
+    [TERRAIN_MISTY_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), BATTLE_GFX_TRANSPARENT_TERRAIN + 1, (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
+    [TERRAIN_GRASSY_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), BATTLE_GFX_TRANSPARENT_TERRAIN + 1, (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
+    [TERRAIN_PSYCHIC_TERRAIN] = { (BATTLE_GFX_TRANSPARENT_TERRAIN + 1), BATTLE_GFX_TRANSPARENT_TERRAIN + 1, (BATTLE_GFX_TRANSPARENT_TERRAIN + 1) },
 };
 
+// clang-format off
 BattleBGStorage NewBattleBgTable[] = {
-    [BATTLE_BG_ELECTRIC_TERRAIN - NUM_VANILLA_BATTLE_BACKGROUNDS] = { .baseEntry = 354, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
-    [BATTLE_BG_MISTY_TERRAIN -
-        NUM_VANILLA_BATTLE_BACKGROUNDS]
-    = { .baseEntry = 356, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
-    [BATTLE_BG_GRASSY_TERRAIN -
-        NUM_VANILLA_BATTLE_BACKGROUNDS]
-    = { .baseEntry = 358, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
-    [BATTLE_BG_PSYCHIC_TERRAIN -
-        NUM_VANILLA_BATTLE_BACKGROUNDS]
-    = { .baseEntry = 360, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
+    [BATTLE_BG_ELECTRIC_TERRAIN - NUM_VANILLA_BATTLE_BACKGROUNDS] =
+        { .baseEntry = 354, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
+    [BATTLE_BG_MISTY_TERRAIN - NUM_VANILLA_BATTLE_BACKGROUNDS] =
+        { .baseEntry = 356, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
+    [BATTLE_BG_GRASSY_TERRAIN - NUM_VANILLA_BATTLE_BACKGROUNDS] =
+        { .baseEntry = 358, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
+    [BATTLE_BG_PSYCHIC_TERRAIN - NUM_VANILLA_BATTLE_BACKGROUNDS] =
+        { .baseEntry = 360, .hasDayNightPals = FALSE, .hasPlatforms = FALSE },
 };
+// clang-format on
 
 u8 sCamouflageTypeTable[] = {
     [TERRAIN_PLAIN] = TYPE_GROUND,
