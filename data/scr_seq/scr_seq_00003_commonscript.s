@@ -836,7 +836,7 @@ _pcheal:
     play_fanfare SEQ_ME_ASA
     wait_fanfare
     heal_party
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade 
     goto _0A2E
