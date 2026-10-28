@@ -326,18 +326,18 @@ A transparent device overflowing with\ndubious data.\nIt’s loved by a certain 
 A cloth imbued with horrifyingly strong\nspiritual energy.\nIt’s loved by a certain Pokémon.
 An item to be held by a Pokémon.\nThis sharply hooked claw boosts the\ncritical-hit ratio of the holder’s moves.
 An item to be held by a Pokémon.\nWhen the holder successfully inflicts\ndamage, the target may also flinch.
-The user focuses its mind before\nlaunching this attack. It will fail\nif the user is hit before it is used.
-Sharp, huge claws hook and slash\nthe foe quickly and with great\npower.
-The foe is hit with a pulsing blast\nof water. It may also confuse the\ntarget.
-The user quietly focuses its mind and\ncalms its spirit to raise its Sp. Atk\nand Sp. Def stats.
-The foe is scared off, to be replaced\nby another Pokémon in its party.\nIn the wild, the battle ends.
-A move that leaves the foe badly\npoisoned. This poison damage\nworsens every turn.
-Summons a hailstorm that lasts for\nfive turns. The hailstorm damages\nall types except Ice.
-The user tenses its muscles to bulk up\nits body, boosting both its Attack and\nDefense stats.
-The user forcefully shoots seeds at\nthe foe. Two to five seeds are shot in\nrapid succession.
-A variable move that changes type\nand power depending on the hidden\nability of the Pokémon using it.
-The user intensifies the sun for\nfive turns, powering up Fire-type\nmoves.
-The foe is taunted into a rage that\nallows it to use only attack moves for\ntwo to four turns.
+The user looses a blast of aura\npower from deep within its body.\nThis move is certain to hit.
+The user slashes the foe with huge,\nsharp claws.
+An odd psychic wave attacks the\ntarget. This attack does physical\ndamage.
+The user quietly focuses its mind\nand calms its spirit to raise its\nSp. Atk and Sp. Def stats.
+The foe is scared off, to be\nreplaced by another Pokémon in its\nparty. In the wild, the battle ends.
+A move that leaves the target badly\npoisoned. Its poison damage worsens\nevery turn.
+The area around the user is swamped\nby a giant sludge wave. It may also\npoison those hit.
+After making its attack, the user\nrushes back to switch places with a\nparty Pokémon in waiting.
+The user forcefully shoots seeds at\nthe foe. Two to five seeds are shot\nin rapid succession.
+A unique attack that varies in type\ndepending on the Pokémon using it.
+The user damages opposing Pokémon by\nemitting a powerful flash.
+The foe is taunted into a rage that\nallows it to use only attack moves\nfor two to four turns.
 The foe is struck with an icy-cold\nbeam of energy. It may also freeze\nthe target solid.
 The user attacks with a gust of\nchilled air. It also lowers the\ntarget’s Speed stat.
 The user lays a trap of spikes at\nthe foe’s feet. The trap hurts foes\nthat switch into battle.
@@ -357,7 +357,7 @@ The user burrows, then attacks on\nthe second turn. It can also be used\nto exit
 The foe is hit by a strong\ntelekinetic force. It may also\nreduce the foe’s Sp. Def stat.
 The user hurls a shadowy blob at the\nfoe. It may also lower the foe’s Sp.\nDef stat.
 The user attacks with tough fists,\netc. It can also break any barrier\nsuch as Light Screen and Reflect.
----
+The user slams its body into the\ntarget. The higher the user’s\nDefense stat, the greater the\rdamage.
 A wondrous wall of light is put up\nto suppress damage from physical\nattacks for five turns.
 The user strikes the foe with a\nquick jolt of electricity. This\nattack cannot be evaded.
 The foe is scorched with an intense\nblast of fire. The target may also\nbe left with a burn.
@@ -393,7 +393,7 @@ The user explodes to inflict damage\non all Pokémon in battle. The user\nfaints
 The user slashes with a sharp claw\nmade from shadows. It has a high\ncritical-hit ratio.
 If the user can use this attack\nafter the foe attacks, its power is\ndoubled.
 The user recycles a held item that\nhas been used in battle so it can be\nused again.
----
+The user slams into the target using\na blast of water. This may also\nlower the target’s Defense stat.
 The user attacks by playing rough\nwith the target. This may also lower\nthe target’s Attack stat.
 The user traps the foe in an\nelectric net. It also lowers the\nfoe’s Speed.
 The user stabs the foe with a\nsharpened stone. It has a high\ncritical-hit ratio.
@@ -415,17 +415,17 @@ The user snares the foe with grass\nand trips it. The heavier the foe,\nthe grea
 The user barks menacingly. It also\nlowers the foe’s Sp. Atk.
 The user exhales a heated breath on\nthe foe to attack. It may also leave\nthe target with a burn.
 After making its attack, the user\nrushes back to switch places with a\nparty Pokémon in waiting.
-The user makes a copy of itself using\nsome of its HP. The copy serves as\nthe user’s decoy.
-The user gathers all its light energy\nand releases it in one shot. It may\nalso lower the foe’s Sp. Def stat.
-The user creates a bizarre space in\nwhich slower Pokémon get to move\nfirst for five turns.
-The foe is cut with a scythe or a claw.\nIt can also be used to cut down thin\ntrees.
-The user soars, then strikes on the\nsecond turn. It can also be used to\nfly to any familiar town.
-It swamps the entire battlefield with\na giant wave. It can also be used\nto cross water.
-The foe is slugged with a punch thrown\nat maximum power. It can also be used\nto move boulders.
-Traps foes in a violent swirling\nwhirlpool. It can also be used to\ntraverse whirlpools.
-The user slugs the foe with a\nshattering punch. It can also smash\ncracked boulders.
-The user charges the foe at an\nawesome speed. It can also be used\nto climb a waterfall.
-A charging attack that may also leave\nthe foe confused. It can also be used\nto scale rocky walls.
+The user makes a copy of itself\nusing some of its HP. The copy\nserves as the user’s decoy.
+The user gathers all its light\nenergy and releases it at once. It\nmay also lower the foe’s Sp. Def\rstat.
+The user creates a bizarre area in\nwhich slower Pokémon get to move\nfirst for five turns.
+The foe is cut with a scythe or a\nclaw. It can also be used to cut\ndown thin trees.
+The user soars, then strikes on the\nsecond turn. It can also be used for\nflying to any familiar town.
+It swamps the entire battlefield\nwith a giant wave. It can also be\nused for crossing water.
+The foe is slugged with a punch\nthrown at maximum power. It can also\nbe used to move boulders.
+Traps the foe inside a whirlpool\nthat lasts for two to five turns.\nThe user can pass through\rwhirlpools.
+The user hits with a punch that may\nlower the target’s Defense. It can\nalso smash cracked boulders.
+The user charges at the foe rapidly,\nand may make it flinch. It can also\nbe used to climb a waterfall.
+A charging attack that may also\nleave the foe confused. It can also\nbe used to scale rocky walls.
 A bag filled with convenient tools for\nexploring. It provides access to the\nUnderground in the Sinnoh region.
 A sturdy, spacious bag that is used\nto carry any treasures or loot\nobtained in the coal mine.
 It lists the rules for holding battles.\nFor Link Battles, you may choose which\nset of rules you wish to use.

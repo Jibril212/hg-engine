@@ -79,7 +79,7 @@ When used, it removes any stat\nchanges of an ally Pokémon.
 It can be used many times to greatly\nraise a Pokémon’s critical-hit ratio.\nIt wears off if the Pokémon is withdrawn.
 Reshiram’s body was destroyed and\nchanged into this stone. It is said to\nbe waiting for the emergence of a hero.
 Zekrom’s body was destroyed and\nchanged into this stone. It is said to\nbe waiting for the emergence of a hero.
-The user gathers all its light energy\nand releases it at once. It may also\nlower the foe’s Sp. Def stat.
+The user gathers all its light\nenergy and releases it at once. It\nmay also lower the foe’s Sp. Def\rstat.
 The user releases a horrible aura\nimbued with dark thoughts. It may\nalso make the target flinch.
 A blood-draining attack. The user’s\nHP is restored by half the damage\ntaken by the target.
 A high-tech transceiver with a camera\nfunction.\nIt allows up to four-way calls.
