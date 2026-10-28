@@ -12,360 +12,8 @@
 #define GFX_ITEM_RETURN_ID ((MAX_TOTAL_ITEM_NUM + 1) * 2 + 4)
 #define NEW_ITEM_GFX       (797)
 
-static const u16 sMachineMoves[] = {
-    // vanilla TMs
-    MOVE_AURA_SPHERE,      // TM001
-    MOVE_DRAGON_CLAW,      // TM002
-    MOVE_PSYSHOCK,      // TM003
-    MOVE_CALM_MIND,        // TM004
-    MOVE_ROAR,             // TM005
-    MOVE_TOXIC,            // TM006
-    MOVE_SLUDGE_WAVE,             // TM007
-    MOVE_FLIP_TURN,          // TM008
-    MOVE_BULLET_SEED,      // TM009
-    MOVE_HIDDEN_POWER,     // TM010
-    MOVE_DAZZLING_GLEAM,        // TM011
-    MOVE_TAUNT,            // TM012
-    MOVE_ICE_BEAM,         // TM013
-    MOVE_ICY_WIND,         // TM014
-    MOVE_SPIKES,       // TM015
-    MOVE_LIGHT_SCREEN,     // TM016
-    MOVE_PROTECT,          // TM017
-    MOVE_TOXIC_SPIKES,       // TM018
-    MOVE_GIGA_DRAIN,       // TM019
-    MOVE_LEECH_LIFE,        // TM020
-    MOVE_POWER_UP_PUNCH,      // TM021
-    MOVE_THROAT_CHOP,       // TM022
-    MOVE_IRON_TAIL,        // TM023
-    MOVE_THUNDERBOLT,      // TM024
-    MOVE_THUNDER,          // TM025
-    MOVE_EARTHQUAKE,       // TM026
-    MOVE_RETURN,           // TM027
-    MOVE_DIG,              // TM028
-    MOVE_PSYCHIC,          // TM029
-    MOVE_SHADOW_BALL,      // TM030
-    MOVE_BRICK_BREAK,      // TM031
-    MOVE_BODY_PRESS,      // TM032
-    MOVE_REFLECT,          // TM033
-    MOVE_SHOCK_WAVE,       // TM034
-    MOVE_FLAMETHROWER,     // TM035
-    MOVE_SLUDGE_BOMB,      // TM036
-    MOVE_DUAL_WINGBEAT,        // TM037
-    MOVE_NIGHT_SLASH,       // TM038
-    MOVE_DRILL_RUN,        // TM039
-    MOVE_ACROBATICS,       // TM040
-    MOVE_KNOCK_OFF,          // TM041
-    MOVE_FACADE,           // TM042
-    MOVE_VOLT_SWITCH,     // TM043
-    MOVE_REST,             // TM044
-    MOVE_CRUNCH,          // TM045
-    MOVE_THIEF,            // TM046
-    MOVE_STEEL_WING,       // TM047
-    MOVE_SKILL_SWAP,       // TM048
-    MOVE_THUNDER_FANG,           // TM049
-    MOVE_FIRE_FANG,         // TM050
-    MOVE_ROOST,            // TM051
-    MOVE_ICE_FANG,      // TM052
-    MOVE_ENERGY_BALL,      // TM053
-    MOVE_FALSE_SWIPE,      // TM054
-    MOVE_SCALD,            // TM055
-    MOVE_POWER_GEM,            // TM056
-    MOVE_CHARGE_BEAM,      // TM057
-    MOVE_ENDURE,           // TM058
-    MOVE_DRAGON_PULSE,     // TM059
-    MOVE_DRAIN_PUNCH,      // TM060
-    MOVE_WILL_O_WISP,      // TM061
-    MOVE_NASTY_PLOT,      // TM062
-    MOVE_PSYCHIC_FANGS,          // TM063
-    MOVE_EXPLOSION,        // TM064
-    MOVE_SHADOW_CLAW,      // TM065
-    MOVE_PAYBACK,          // TM066
-    MOVE_RECYCLE,          // TM067
-    MOVE_LIQUIDATION,      // TM068
-    MOVE_PLAY_ROUGH,      // TM069
-    MOVE_ELECTROWEB,            // TM070
-    MOVE_STONE_EDGE,       // TM071
-    MOVE_ZEN_HEADBUTT,        // TM072
-    MOVE_THUNDER_WAVE,     // TM073
-    MOVE_GYRO_BALL,        // TM074
-    MOVE_SWORDS_DANCE,     // TM075
-    MOVE_STEALTH_ROCK,     // TM076
-    MOVE_CHARM,         // TM077
-    MOVE_CAPTIVATE,        // TM078
-    MOVE_DARK_PULSE,       // TM079
-    MOVE_ROCK_SLIDE,       // TM080
-    MOVE_X_SCISSOR,        // TM081
-    MOVE_SLEEP_TALK,       // TM082
-    MOVE_HURRICANE,     // TM083
-    MOVE_POISON_JAB,       // TM084
-    MOVE_HYPER_VOICE,      // TM085
-    MOVE_GRASS_KNOT,       // TM086
-    MOVE_SNARL,          // TM087
-    MOVE_HEAT_WAVE,            // TM088
-    MOVE_U_TURN,           // TM089
-    MOVE_SUBSTITUTE,       // TM090
-    MOVE_FLASH_CANNON,     // TM091
-    MOVE_TRICK_ROOM,       // TM092
-
-    // vanilla HMs
-    MOVE_CUT, // HM01
-    MOVE_FLY, // HM02
-    MOVE_SURF, // HM03
-    MOVE_STRENGTH, // HM04
-    MOVE_WHIRLPOOL, // HM05
-    MOVE_ROCK_SMASH, // HM06
-    MOVE_WATERFALL, // HM07
-    MOVE_ROCK_CLIMB, // HM08
-
-    // HM07 (ORAS)
-    MOVE_DIVE, // HM07_ORAS
-
-    // expansion TMs
-    MOVE_MEGA_PUNCH, // TM00
-    MOVE_FLASH_CANNON, // TM093
-    MOVE_DARK_PULSE, // TM094
-    MOVE_LEECH_LIFE, // TM095
-    MOVE_EERIE_IMPULSE, // TM096
-    MOVE_FLY, // TM097
-    MOVE_SKILL_SWAP, // TM098
-    MOVE_IRON_HEAD, // TM099
-    MOVE_CONFIDE, // TM100
-    MOVE_DRAGON_DANCE, // TM100_SV
-    MOVE_POWER_GEM, // TM101
-    MOVE_GUNK_SHOT, // TM102
-    MOVE_SUBSTITUTE, // TM103
-    MOVE_IRON_DEFENSE, // TM104
-    MOVE_X_SCISSOR, // TM105
-    MOVE_DRILL_RUN, // TM106
-    MOVE_WILL_O_WISP, // TM107
-    MOVE_CRUNCH, // TM108
-    MOVE_TRICK, // TM109
-    MOVE_LIQUIDATION, // TM110
-    MOVE_GIGA_DRAIN, // TM111
-    MOVE_AURA_SPHERE, // TM112
-    MOVE_TAILWIND, // TM113
-    MOVE_SHADOW_BALL, // TM114
-    MOVE_DRAGON_PULSE, // TM115
-    MOVE_STEALTH_ROCK, // TM116
-    MOVE_HYPER_VOICE, // TM117
-    MOVE_HEAT_WAVE, // TM118
-    MOVE_ENERGY_BALL, // TM119
-    MOVE_PSYCHIC, // TM120
-    MOVE_HEAVY_SLAM, // TM121
-    MOVE_ENCORE, // TM122
-    MOVE_SURF, // TM123
-    MOVE_ICE_SPINNER, // TM124
-    MOVE_FLAMETHROWER, // TM125
-    MOVE_THUNDERBOLT, // TM126
-    MOVE_PLAY_ROUGH, // TM127
-    MOVE_AMNESIA, // TM128
-    MOVE_CALM_MIND, // TM129
-    MOVE_HELPING_HAND, // TM130
-    MOVE_POLLEN_PUFF, // TM131
-    MOVE_BATON_PASS, // TM132
-    MOVE_EARTH_POWER, // TM133
-    MOVE_REVERSAL, // TM134
-    MOVE_ICE_BEAM, // TM135
-    MOVE_ELECTRIC_TERRAIN, // TM136
-    MOVE_GRASSY_TERRAIN, // TM137
-    MOVE_PSYCHIC_TERRAIN, // TM138
-    MOVE_MISTY_TERRAIN, // TM139
-    MOVE_NASTY_PLOT, // TM140
-    MOVE_FIRE_BLAST, // TM141
-    MOVE_HYDRO_PUMP, // TM142
-    MOVE_BLIZZARD, // TM143
-    MOVE_FIRE_PLEDGE, // TM144
-    MOVE_WATER_PLEDGE, // TM145
-    MOVE_GRASS_PLEDGE, // TM146
-    MOVE_WILD_CHARGE, // TM147
-    MOVE_SLUDGE_BOMB, // TM148
-    MOVE_EARTHQUAKE, // TM149
-    MOVE_STONE_EDGE, // TM150
-    MOVE_PHANTOM_FORCE, // TM151
-    MOVE_GIGA_IMPACT, // TM152
-    MOVE_BLAST_BURN, // TM153
-    MOVE_HYDRO_CANNON, // TM154
-    MOVE_FRENZY_PLANT, // TM155
-    MOVE_OUTRAGE, // TM156
-    MOVE_OVERHEAT, // TM157
-    MOVE_FOCUS_BLAST, // TM158
-    MOVE_LEAF_STORM, // TM159
-    MOVE_HURRICANE, // TM160
-    MOVE_TRICK_ROOM, // TM161
-    MOVE_BUG_BUZZ, // TM162
-    MOVE_HYPER_BEAM, // TM163
-    MOVE_BRAVE_BIRD, // TM164
-    MOVE_FLARE_BLITZ, // TM165
-    MOVE_THUNDER, // TM166
-    MOVE_CLOSE_COMBAT, // TM167
-    MOVE_SOLAR_BEAM, // TM168
-    MOVE_DRACO_METEOR, // TM169
-    MOVE_STEEL_BEAM, // TM170
-    MOVE_TERA_BLAST, // TM171
-    MOVE_ROAR, // TM172
-    MOVE_CHARGE, // TM173
-    MOVE_HAZE, // TM174
-    MOVE_TOXIC, // TM175
-    MOVE_SAND_TOMB, // TM176
-    MOVE_SPITE, // TM177
-    MOVE_GRAVITY, // TM178
-    MOVE_SMACK_DOWN, // TM179
-    MOVE_GYRO_BALL, // TM180
-    MOVE_KNOCK_OFF, // TM181
-    MOVE_BUG_BITE, // TM182
-    MOVE_SUPER_FANG, // TM183
-    MOVE_VACUUM_WAVE, // TM184
-    MOVE_LUNGE, // TM185
-    MOVE_HIGH_HORSEPOWER, // TM186
-    MOVE_ICICLE_SPEAR, // TM187
-    MOVE_SCALD, // TM188
-    MOVE_HEAT_CRASH, // TM189
-    MOVE_SOLAR_BLADE, // TM190
-    MOVE_UPROAR, // TM191
-    MOVE_FOCUS_PUNCH, // TM192
-    MOVE_WEATHER_BALL, // TM193
-    MOVE_GRASSY_GLIDE, // TM194
-    MOVE_BURNING_JEALOUSY, // TM195
-    MOVE_FLIP_TURN, // TM196
-    MOVE_DUAL_WINGBEAT, // TM197
-    MOVE_POLTERGEIST, // TM198
-    MOVE_LASH_OUT, // TM199
-    MOVE_SCALE_SHOT, // TM200
-    MOVE_MISTY_EXPLOSION, // TM201
-    MOVE_PAIN_SPLIT, // TM202
-    MOVE_PSYCH_UP, // TM203
-    MOVE_DOUBLE_EDGE, // TM204
-    MOVE_ENDEAVOR, // TM205
-    MOVE_PETAL_BLIZZARD, // TM206
-    MOVE_TEMPER_FLARE, // TM207
-    MOVE_WHIRLPOOL, // TM208
-    MOVE_MUDDY_WATER, // TM209
-    MOVE_SUPERCELL_SLAM, // TM210
-    MOVE_ELECTROWEB, // TM211
-    MOVE_TRIPLE_AXEL, // TM212
-    MOVE_COACHING, // TM213
-    MOVE_SLUDGE_WAVE, // TM214
-    MOVE_SCORCHING_SANDS, // TM215
-    MOVE_FEATHER_DANCE, // TM216
-    MOVE_FUTURE_SIGHT, // TM217
-    MOVE_EXPANDING_FORCE, // TM218
-    MOVE_SKITTER_SMACK, // TM219
-    MOVE_METEOR_BEAM, // TM220
-    MOVE_THROAT_CHOP, // TM221
-    MOVE_BREAKING_SWIPE, // TM222
-    MOVE_METAL_SOUND, // TM223
-    MOVE_CURSE, // TM224
-    MOVE_HARD_PRESS, // TM225
-    MOVE_DRAGON_CHEER, // TM226
-    MOVE_ALLURING_VOICE, // TM227
-    MOVE_PSYCHIC_NOISE, // TM228
-    MOVE_UPPER_HAND, // TM229
-
-    // TRs
-    MOVE_SWORDS_DANCE, // TR00
-    MOVE_BODY_SLAM, // TR01
-    MOVE_FLAMETHROWER, // TR02
-    MOVE_HYDRO_PUMP, // TR03
-    MOVE_SURF, // TR04
-    MOVE_ICE_BEAM, // TR05
-    MOVE_BLIZZARD, // TR06
-    MOVE_LOW_KICK, // TR07
-    MOVE_THUNDERBOLT, // TR08
-    MOVE_THUNDER, // TR09
-    MOVE_EARTHQUAKE, // TR10
-    MOVE_PSYCHIC, // TR11
-    MOVE_AGILITY, // TR12
-    MOVE_FOCUS_ENERGY, // TR13
-    MOVE_METRONOME, // TR14
-    MOVE_FIRE_BLAST, // TR15
-    MOVE_WATERFALL, // TR16
-    MOVE_AMNESIA, // TR17
-    MOVE_LEECH_LIFE, // TR18
-    MOVE_TRI_ATTACK, // TR19
-    MOVE_SUBSTITUTE, // TR20
-    MOVE_REVERSAL, // TR21
-    MOVE_SLUDGE_BOMB, // TR22
-    MOVE_SPIKES, // TR23
-    MOVE_OUTRAGE, // TR24
-    MOVE_PSYSHOCK, // TR25
-    MOVE_ENDURE, // TR26
-    MOVE_SLEEP_TALK, // TR27
-    MOVE_MEGAHORN, // TR28
-    MOVE_BATON_PASS, // TR29
-    MOVE_ENCORE, // TR30
-    MOVE_IRON_TAIL, // TR31
-    MOVE_CRUNCH, // TR32
-    MOVE_SHADOW_BALL, // TR33
-    MOVE_FUTURE_SIGHT, // TR34
-    MOVE_UPROAR, // TR35
-    MOVE_HEAT_WAVE, // TR36
-    MOVE_TAUNT, // TR37
-    MOVE_TRICK, // TR38
-    MOVE_SUPERPOWER, // TR39
-    MOVE_SKILL_SWAP, // TR40
-    MOVE_BLAZE_KICK, // TR41
-    MOVE_HYPER_VOICE, // TR42
-    MOVE_OVERHEAT, // TR43
-    MOVE_COSMIC_POWER, // TR44
-    MOVE_MUDDY_WATER, // TR45
-    MOVE_IRON_DEFENSE, // TR46
-    MOVE_DRAGON_CLAW, // TR47
-    MOVE_BULK_UP, // TR48
-    MOVE_CALM_MIND, // TR49
-    MOVE_LEAF_BLADE, // TR50
-    MOVE_DRAGON_DANCE, // TR51
-    MOVE_GYRO_BALL, // TR52
-    MOVE_CLOSE_COMBAT, // TR53
-    MOVE_TOXIC_SPIKES, // TR54
-    MOVE_FLARE_BLITZ, // TR55
-    MOVE_AURA_SPHERE, // TR56
-    MOVE_POISON_JAB, // TR57
-    MOVE_DARK_PULSE, // TR58
-    MOVE_SEED_BOMB, // TR59
-    MOVE_X_SCISSOR, // TR60
-    MOVE_BUG_BUZZ, // TR61
-    MOVE_DRAGON_PULSE, // TR62
-    MOVE_POWER_GEM, // TR63
-    MOVE_FOCUS_BLAST, // TR64
-    MOVE_ENERGY_BALL, // TR65
-    MOVE_BRAVE_BIRD, // TR66
-    MOVE_EARTH_POWER, // TR67
-    MOVE_NASTY_PLOT, // TR68
-    MOVE_ZEN_HEADBUTT, // TR69
-    MOVE_FLASH_CANNON, // TR70
-    MOVE_LEAF_STORM, // TR71
-    MOVE_POWER_WHIP, // TR72
-    MOVE_GUNK_SHOT, // TR73
-    MOVE_IRON_HEAD, // TR74
-    MOVE_STONE_EDGE, // TR75
-    MOVE_STEALTH_ROCK, // TR76
-    MOVE_GRASS_KNOT, // TR77
-    MOVE_SLUDGE_WAVE, // TR78
-    MOVE_HEAVY_SLAM, // TR79
-    MOVE_ELECTRO_BALL, // TR80
-    MOVE_FOUL_PLAY, // TR81
-    MOVE_STORED_POWER, // TR82
-    MOVE_ALLY_SWITCH, // TR83
-    MOVE_SCALD, // TR84
-    MOVE_WORK_UP, // TR85
-    MOVE_WILD_CHARGE, // TR86
-    MOVE_DRILL_RUN, // TR87
-    MOVE_HEAT_CRASH, // TR88
-    MOVE_HURRICANE, // TR89
-    MOVE_PLAY_ROUGH, // TR90
-    MOVE_VENOM_DRENCH, // TR91
-    MOVE_DAZZLING_GLEAM, // TR92
-    MOVE_DARKEST_LARIAT, // TR93
-    MOVE_HIGH_HORSEPOWER, // TR94
-    MOVE_THROAT_CHOP, // TR95
-    MOVE_POLLEN_PUFF, // TR96
-    MOVE_PSYCHIC_FANGS, // TR97
-    MOVE_LIQUIDATION, // TR98
-    MOVE_BODY_PRESS, // TR99
-};
-
 u16 GetItemIndex(u16 item, u16 type);
-void *GetItemArcData(u16 item, u16 type, u32 heap_id);
+void *GetItemNarcData(u16 item, u16 type, u32 heap_id);
 u16 ItemToMachineMove(u16 itemId);
 // void *LONG_CALL ItemDataTableLoad(int heapID);
 void ItemMenuUseFunc_RevealGlass(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2);
@@ -379,38 +27,7 @@ void ItemMenuUseFunc_Mint(struct ItemMenuUseData *data, const struct ItemCheckUs
 void ItemMenuUseFunc_Nectar(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 void ItemMenuUseFunc_RotomCatalog(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 
-const struct ItemUseFuncDat sItemFieldUseFuncs[] = {
-    { NULL, ItemFieldUseFunc_Generic, NULL },
-    { ItemMenuUseFunc_HealingItem, NULL, NULL },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_Bicycle, ItemFieldUseFunc_Bicycle, ItemCheckUseFunc_Bicycle },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_TMHM, NULL, NULL },
-    { ItemMenuUseFunc_Mail, NULL, NULL },
-    { ItemMenuUseFunc_Berry, NULL, ItemCheckUseFunc_Berry },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_PalPad, ItemFieldUseFunc_PalPad, NULL },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_Honey, NULL, NULL },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_OldRod, ItemFieldUseFunc_OldRod, ItemCheckUseFunc_FishingRod },
-    { ItemMenuUseFunc_GoodRod, ItemFieldUseFunc_GoodRod, ItemCheckUseFunc_FishingRod },
-    { ItemMenuUseFunc_SuperRod, ItemFieldUseFunc_SuperRod, ItemCheckUseFunc_FishingRod },
-    { NULL, ItemFieldUseFunc_Generic, NULL },
-    { ItemMenuUseFunc_EvoStone, NULL, NULL },
-    { ItemMenuUseFunc_EscapeRope, NULL, ItemCheckUseFunc_EscapeRope },
-    { NULL, NULL, ItemCheckUseFunc_Dummy },
-    { ItemMenuUseFunc_ApricornBox, ItemFieldUseFunc_ApricornBox, NULL },
-    { ItemMenuUseFunc_BerryPots, ItemFieldUseFunc_BerryPots, NULL },
-    { ItemMenuUseFunc_UnownReport, ItemFieldUseFunc_UnownReport, NULL },
-    { ItemMenuUseFunc_DowsingMchn, ItemFieldUseFunc_DowsingMchn, NULL },
-    { NULL, ItemFieldUseFunc_GbSounds, NULL },
-    { ItemMenuUseFunc_Gracidea, ItemFieldUseFunc_Gracidea, NULL },
-    { ItemMenuUseFunc_VSRecorder, ItemFieldUseFunc_VSRecorder, NULL },
-    // new item use entries
+const struct ItemUseFuncDat sNewItemFieldUseFuncs[] = {
     { ItemMenuUseFunc_RevealGlass, ItemFieldUseFunc_RevealGlass, NULL },
     { ItemMenuUseFunc_DNASplicers, ItemFieldUseFunc_DNASplicers, NULL },
     { ItemMenuUseFunc_AbilityCapsule, NULL, NULL },
@@ -418,6 +35,29 @@ const struct ItemUseFuncDat sItemFieldUseFuncs[] = {
     { ItemMenuUseFunc_Nectar, NULL, NULL },
     { ItemMenuUseFunc_RotomCatalog, NULL, NULL },
 };
+
+extern const struct ItemUseFuncDat sItemFieldUseFuncs[NUM_VANILLA_FIELD_USE_FUNCS];
+
+void *LONG_CALL GetItemFieldUseFunc(int funcType, u16 itemType)
+{
+    const struct ItemUseFuncDat *useFunc;
+    if (itemType >= NUM_VANILLA_FIELD_USE_FUNCS) {
+        u16 index = itemType - NUM_VANILLA_FIELD_USE_FUNCS;
+        if (index >= NELEMS(sNewItemFieldUseFuncs)) {
+            return NULL;
+        }
+        useFunc = &sNewItemFieldUseFuncs[index];
+    } else {
+        useFunc = &sItemFieldUseFuncs[itemType];
+    }
+    if (funcType == USE_ITEM_TASK_MENU) {
+        return useFunc->menu;
+    } else if (funcType == USE_ITEM_TASK_FIELD) {
+        return useFunc->field;
+    } else {
+        return useFunc->check;
+    }
+}
 
 u16 GetItemIndex(u16 item, u16 type)
 {
@@ -464,21 +104,21 @@ u16 GetItemIndex(u16 item, u16 type)
     return 0;
 }
 
-void *GetItemArcData(u16 item, u16 type, u32 heap_id)
+void *GetItemNarcData(u16 item, u16 type, u32 heapID)
 {
-    int dataid, picid, palid;
+    int dataID, picID, palID;
 
-    dataid = item;
-    picid = item * 2 + 2;
-    palid = item * 2 + 3;
+    dataID = item;
+    picID = item * 2 + 2;
+    palID = item * 2 + 3;
 
     switch (type) {
     case ITEM_GET_DATA:
-        return ArchiveDataLoadMalloc(ARC_ITEM_DATA, dataid, heap_id);
+        return AllocAndReadWholeNarcMemberByIdPair(ARC_ITEM_DATA, dataID, heapID);
     case ITEM_GET_ICON_CGX:
-        return ArchiveDataLoadMalloc(ARC_ITEM_GFX_DATA, picid, heap_id);
+        return AllocAndReadWholeNarcMemberByIdPair(ARC_ITEM_GFX_DATA, picID, heapID);
     case ITEM_GET_ICON_PAL:
-        return ArchiveDataLoadMalloc(ARC_ITEM_GFX_DATA, palid, heap_id);
+        return AllocAndReadWholeNarcMemberByIdPair(ARC_ITEM_GFX_DATA, palID, heapID);
     }
     return NULL;
 }
@@ -497,11 +137,9 @@ void LONG_CALL GetItemDescIntoString(String *dest, u16 itemId, u16 heapId)
 
 void *LONG_CALL ItemDataTableLoad(int heapID)
 {
-    int max;
+    int max = GetItemIndex(MAX_TOTAL_ITEM_NUM, ITEM_GET_DATA) + 1;
 
-    max = GetItemIndex(MAX_TOTAL_ITEM_NUM, ITEM_GET_DATA);
-
-    return ArchiveDataLoadMallocOfs(ARC_ITEM_DATA, 0, heapID, 0, sizeof(ITEMDATA) * max); // 800757Ch
+    return AllocAndReadFromNarcMemberByIdPair(ARC_ITEM_DATA, 0, heapID, 0, sizeof(ITEMDATA) * max); // 800757Ch
 }
 
 /**
@@ -546,16 +184,21 @@ u16 ItemToMachineMove(u16 itemId)
     }
 
     u16 index = ItemToMachineMoveIndex(itemId);
-    if (index >= sizeof(sMachineMoves) + 1) {
+    if (index >= NUM_MACHINE_MOVES) {
         return MOVE_NONE;
     }
-    return sMachineMoves[index];
+    u16 move = 0;
+    ReadFromNarcMemberByIdPair(&move, ARC_CODE_ADDONS, CODE_ADDON_MACHINE_MOVES, sizeof(u16) * (index), sizeof(u16));
+    return move;
 }
 
 BOOL MoveIsHM(u16 moveId)
 {
     for (u8 i = 0; i < NUM_HMS; i++) {
-        if (sMachineMoves[i + ITEM_HM01 - ITEM_TM001] == moveId) {
+        u16 moveTmp;
+        u16 index = i + ITEM_HM01 - ITEM_TM001;
+        ReadFromNarcMemberByIdPair(&moveTmp, ARC_CODE_ADDONS, CODE_ADDON_MACHINE_MOVES, sizeof(u16) * (index), sizeof(u16));
+        if (moveTmp == moveId) {
 #if defined(REUSABLE_TMS) && defined(DELETABLE_HMS)
             return FALSE;
 #else

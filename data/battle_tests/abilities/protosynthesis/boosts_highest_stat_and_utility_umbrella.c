@@ -1,7 +1,7 @@
 // Test: Protosynthesis boosts the highest stat, either Attack or Special Attack only, not both. Protosynthesis activates even if the Pokemon is holding an Utility Umbrella. 
 {
-    .battleType = BATTLE_TYPE_SINGLE,
-    .weather = WEATHER_NONE,
+    .battleType = BATTLE_TYPE_TRAINER,
+    .weather = FIELD_CONDITION_NONE,
     .fieldCondition = 0,
     .terrain = TERRAIN_NONE,
 
@@ -93,6 +93,7 @@
 
     .expectations = {
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The sunlight turned harsh!" }, // Sun
+        { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "WalkngWake's Protosynthesis" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The harsh sunlight activated WalkngWake's Protosynthesis!" }, // Protosynthesis message
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "WalkngWake's Sp. Atk was heightened!" }, // Sp. Atk
         { .expectationType = EXPECTATION_TYPE_HP_BAR, .battlerIDOrPartySlot = BATTLER_ENEMY_FIRST, .expectationValue.hpTaken = { 21, 21, 21, 22, 22, 22, 22, 23, 23, 23, 23, 24, 24, 24, 24, 25 } },

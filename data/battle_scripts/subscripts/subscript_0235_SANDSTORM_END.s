@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -8,5 +9,5 @@ _000:
     PrintMessage 806, TAG_NONE
     Wait 
     WaitButtonABTime 30
-    Call BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
+    GoToSubscript BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
     End 

@@ -1,42 +1,62 @@
-#include "../../include/battle.h"
-#include "../../include/config.h"
-#include "../../include/debug.h"
-#include "../../include/pokemon.h"
-#include "../../include/test_battle.h"
-#include "../../include/types.h"
-#include "../../include/constants/ability.h"
-#include "../../include/constants/hold_item_effects.h"
-#include "../../include/constants/battle_message_constants.h"
-#include "../../include/constants/battle_script_constants.h"
-#include "../../include/constants/item.h"
-#include "../../include/constants/move_effects.h"
-#include "../../include/constants/moves.h"
-#include "../../include/constants/species.h"
-#include "../../include/constants/file.h"
-#include "../../include/overlay.h"
+#include "config.h"
+#include "debug.h"
+#include "types.h"
+
+#include "constants/ability.h"
+#include "constants/battle_message_constants.h"
+#include "constants/battle_script_constants.h"
+#include "constants/file.h"
+#include "constants/hold_item_effects.h"
+#include "constants/item.h"
+#include "constants/move_effects.h"
+#include "constants/moves.h"
+#include "constants/species.h"
+
+#include "battle.h"
+#include "overlay.h"
+#include "pokemon.h"
+#include "test_battle.h"
 
 /**
  * Platinum version as reference
  * BattleController_MoveEnd
  * https://github.com/pret/pokeplatinum/blob/447c17a0f12b4a7656dded8aaa6e41ae9694cd09/src/battle/battle_controller.c#L3965
  */
-void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struct BattleStruct *ctx) {
-    //debug_printf("In BattleController_MoveEnd\n");
+void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struct BattleStruct *ctx)
+{
+    // debug_printf("In BattleController_MoveEnd\n");
     int script;
     u32 battleType = BattleTypeGet(bsys);
 
-    if (ctx->pursuitContext.isActive == TRUE)
-    {
+    if ((ctx->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0) {
+        ctx->lastSuccessfulMove = ctx->current_move_index;
+    }
+
+    if (ctx->pursuitContext.isActive == TRUE) {
         ctx->pursuitContext.isActive = FALSE;
         ctx->attack_client = ctx->pursuitContext.originalAttacker;
         ctx->defence_client = ctx->pursuitContext.originalDefender;
         if (ctx->current_move_index == MOVE_PURSUIT
             && ctx->battlemon[ctx->reshuffle_client].hp) {
-            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CLEAR_AFTER_PURSUIT);
+            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_CLEAR_AFTER_PURSUIT);
             ctx->next_server_seq_no = CONTROLLER_COMMAND_BEFORE_TURN;
             ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
             return;
         }
+    }
+
+    if (ctx->magicBounceContext.bounceCounter < ctx->magicBounceContext.bounceMaxCounter) {
+        ctx->defence_client = ctx->magicBounceContext.bounceClients[ctx->magicBounceContext.bounceCounter];
+        LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, BATTLE_SUBSCRIPT_MAGIC_COAT);
+        ctx->next_server_seq_no = CONTROLLER_COMMAND_23;
+        ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
+        return;
+    } else if (ctx->magicBounceContext.bounceMaxCounter) {
+        ctx->magicBounceContext.isActive = FALSE;
+        ctx->attack_client = ctx->magicBounceContext.originalAttacker;
+        ctx->defence_client = ctx->magicBounceContext.originalDefender;
+        ctx->magicBounceContext.bounceCounter = 0;
+        ctx->magicBounceContext.bounceMaxCounter = 0;
     }
 
     if (!(battleType & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_PAL_PARK))) {
@@ -47,8 +67,10 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
             return;
         }
 
-        if (ctx->moveConditionsFlags[ctx->attack_client].glaiveRush && ctx->current_move_index != MOVE_GLAIVE_RUSH) {
-            ctx->moveConditionsFlags[ctx->attack_client].glaiveRush = FALSE;
+        if (ctx->moveConditionsFlags[ctx->attack_client].wideOpen
+            && ctx->current_move_index != MOVE_GLAIVE_RUSH
+            && !ctx->futureSightHitTurn) {
+            ctx->moveConditionsFlags[ctx->attack_client].wideOpen = FALSE;
         }
 
         if ((ctx->battlemon[ctx->attack_client].condition2 & STATUS2_RAGE) && (ctx->current_move_index != MOVE_RAGE)) {
@@ -62,9 +84,9 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
         int move_type = GetAdjustedMoveType(ctx, ctx->attack_client, ctx->current_move_index);
         if (ctx->battlemon[ctx->attack_client].moveeffect.isCharged && move_type == TYPE_ELECTRIC && !ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag) {
             if (--ctx->battlemon[ctx->attack_client].moveeffect.isCharged == 0) {
-                    ctx->battlemon[ctx->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_CHARGE;
-                }
-                ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag = 1;
+                ctx->battlemon[ctx->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_CHARGE;
+            }
+            ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag = 1;
         }
 
         // Reset Focus Punch flag
@@ -97,6 +119,7 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
 
     for (int i = 0; i < client_set_max; i++) {
         ctx->moveStatusFlagForSpreadMoves[i] = 0;
+        ctx->moveStatusFlagForSpreadMoves2[i] = 0;
         ctx->damageForSpreadMoves[i] = 0;
         ctx->store_damage[i] = 0;
     }
@@ -109,6 +132,8 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
     ctx->futureSightNoAttacker = FALSE;
     ctx->futureSightSTAB = 0;
     ctx->currentMoveSwitchStatus = CURRENT_MOVE_NO_SWITCH;
+    ctx->moveConditionsFlags[ctx->attack_client].mindBlownOrSteelBeam = FALSE;
+    ctx->recoilDamage = 0;
 
     ctx->moveContext.hitFoesCount = 0;
     ctx->moveContext.hitSubstituteCount = 0;
@@ -116,6 +141,10 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
     ctx->moveContext.currentMoveCalcDone = FALSE;
 
     ctx->pursuitContext.isActive = FALSE;
+
+    ctx->magicBounceContext.isActive = FALSE;
+    ctx->magicBounceContext.bounceCounter = 0;
+    ctx->magicBounceContext.bounceMaxCounter = 0;
 
     ctx->playerActions[ctx->executionOrder[ctx->executionIndex]][0] = CONTROLLER_COMMAND_40;
 

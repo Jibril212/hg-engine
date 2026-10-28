@@ -1,4 +1,7 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
+
+//unused
 
 .data
 
@@ -24,7 +27,6 @@ _026:
     WaitTime 72
     HealthbarSlideIn BATTLER_CATEGORY_SWITCHED_MON
     Wait 
-    Call BATTLE_SUBSCRIPT_HAZARDS_CHECK
     CompareVarToValue OPCODE_FLAG_NOT, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_FAINTED, _065
     Call BATTLE_SUBSCRIPT_FAINT_MON
     UpdateVar OPCODE_FLAG_OFF, BSCRIPT_VAR_BATTLE_STATUS_2, BATTLE_STATUS2_EXP_GAIN

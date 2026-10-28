@@ -1,17 +1,19 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
 _000:
     SetPsychicTerrainMoveUsedFlag 
-    TryCopycat _011
     PrintAttackMessage 
     Wait 
+    TryCopycat _011
     PlayMoveAnimation BATTLER_CATEGORY_ATTACKER
     Wait 
     GotoIfCurrentMoveIsValidForParentalBond _016
 
 _009:
+    GoBackToBeforeMove
     GoToMoveScript FALSE
     End
 

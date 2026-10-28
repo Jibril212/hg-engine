@@ -1,7 +1,7 @@
 // Test: Protosynthesis doesn't activate for a transformed battler
 {
-    .battleType = BATTLE_TYPE_SINGLE,
-    .weather = WEATHER_NONE,
+    .battleType = BATTLE_TYPE_TRAINER,
+    .weather = FIELD_CONDITION_NONE,
     .fieldCondition = 0,
     .terrain = TERRAIN_NONE,
 
@@ -92,6 +92,7 @@
     },
 
     .expectations = {
+        { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Great Tusk's Protosynthesis" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The harsh sunlight activated Great Tusk's Protosynthesis!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Great Tusk's Attack was heightened!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Mew transformed into Great Tusk!" },

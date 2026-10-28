@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -14,8 +15,9 @@ _000:
     Wait 
     WaitButtonABTime 30
     UpdateVar OPCODE_FLAG_ON, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_NO_BLINK
-    GoToSubscript BATTLE_SUBSCRIPT_UPDATE_HP
-    Call BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
+    Call BATTLE_SUBSCRIPT_UPDATE_HP
+    TryActivateEmergencyExit BATTLER_CATEGORY_MSG_BATTLER_TEMP, _033 
+    Call BATTLE_SUBSCRIPT_HANDLE_WIMP_OUT_EMERGENCY_EXIT
 
 _033:
     End 

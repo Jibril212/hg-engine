@@ -14,8 +14,8 @@ const struct TestBattleScenario BattleTests[] = {
 
 #endif
 
-    {   .battleType = BATTLE_TYPE_SINGLE,
-        .weather = WEATHER_NONE,
+    {   .battleType = BATTLE_TYPE_TRAINER,
+        .weather = FIELD_CONDITION_NONE,
         .fieldCondition = 0,
         .terrain = TERRAIN_NONE,
         .playerParty = {
@@ -102,11 +102,14 @@ const struct TestBattleScenario BattleTests[] = {
         },
         .expectations = {
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon is paralyzed, so it may be unable to move!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon's Synchronize paralyzed Mew, so it may be unable to move!" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Espeon's Synchronize" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew is paralyzed, so it may be unable to move!" },
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew's Lum Berry cured its paralysis!" },
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon's Lum Berry cured its paralysis!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew's Poison Touch poisoned the opposing Espeon!" },
-            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon's Synchronize poisoned Mew!" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew's Poison Touch" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon was poisoned!" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Espeon's Synchronize" },
+            { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew was poisoned!" },
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Espeon was hurt by its poisoning!" },
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Mew was hurt by its poisoning!" },
         },

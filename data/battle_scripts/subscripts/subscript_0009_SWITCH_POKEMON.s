@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -19,6 +20,7 @@ _noPursuit:
     GoTo _026
 
 _020:
+    TryActivateZeroToHero BATTLER_CATEGORY_SWITCHED_MON
     RecallPokemon BATTLER_CATEGORY_SWITCHED_MON
     Wait 
     HealthbarSlideOut BATTLER_CATEGORY_SWITCHED_MON
@@ -47,7 +49,7 @@ _047:
     WaitTime 72
     HealthbarSlideIn BATTLER_CATEGORY_SWITCHED_MON
     Wait 
-    Call BATTLE_SUBSCRIPT_HAZARDS_CHECK
+    SetCurrentMoveSwitchingStatus CURRENT_MOVE_NO_SWITCH
     CompareVarToValue OPCODE_GT, BSCRIPT_VAR_BATTLER_FAINTED, BATTLER_ENEMY2, _081
     UpdateVarFromVar OPCODE_FLAG_INDEX, BSCRIPT_VAR_TEMP_DATA, BSCRIPT_VAR_BATTLER_FAINTED
     UpdateVar OPCODE_LEFT_SHIFT, BSCRIPT_VAR_TEMP_DATA, 24

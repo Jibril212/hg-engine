@@ -3,11 +3,12 @@
 
 #include "config.h"
 // #include "save.h"
+#include "types.h"
+
 #include "constants/pokemon.h"
 
 #include "party_menu.h"
 #include "trainer_data.h"
-#include "types.h"
 #include "window.h"
 
 #define POKEMON_GENDER_MALE    0
@@ -710,6 +711,9 @@ typedef struct
     u32 personal_rnd;
 } MON_PIC;
 
+#define MON_PIC_FACING_BACK  0
+#define MON_PIC_FACING_FRONT 2
+
 #define NEEDS_REVERSION 0x8000
 
 typedef struct EncounterInfo {
@@ -1396,6 +1400,9 @@ void LONG_CALL LoadLevelUpLearnset_HandleAlternateForm(int species, int form, u3
 u32 LONG_CALL TryAppendMonMove(struct PartyPokemon *mon, u16 move);
 
 void LONG_CALL BufferBoxMonNickname(MessageFormat *messageFormat, u32 fieldno, struct BoxPokemon *boxmon);
+void LONG_CALL BufferBoxMonSpeciesName(MessageFormat *messageFormat, u32 fieldno, struct BoxPokemon *boxmon);
+
+void LONG_CALL BufferBoxMonNickname(MessageFormat *messageFormat, u32 fieldno, struct BoxPokemon *boxmon);
 
 // defined in src/pokemon.c
 
@@ -1831,5 +1838,7 @@ u16 LONG_CALL ItemToMachineMove(u16 itemId);
 BOOL LONG_CALL GetTMHMCompatBySpeciesAndForm(u16 species, u16 form, u8 tmhmIdx);
 
 void LONG_CALL DeleteMonFirstMoveAndAppend(struct PartyPokemon *mon, u16 move);
+
+struct PartyPokemon LONG_CALL *GetFirstAliveMonInParty_CrashIfNone(struct Party *party);
 
 #endif

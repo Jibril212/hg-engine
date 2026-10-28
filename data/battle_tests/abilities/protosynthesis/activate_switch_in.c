@@ -1,7 +1,7 @@
 // Test: Protosynthesis activates on switch-in & Protosynthesis activates in Sun before Booster Energy
 {
-    .battleType = BATTLE_TYPE_SINGLE,
-    .weather = WEATHER_NONE,
+    .battleType = BATTLE_TYPE_TRAINER,
+    .weather = FIELD_CONDITION_NONE,
     .fieldCondition = 0,
     .terrain = TERRAIN_NONE,
 
@@ -104,6 +104,7 @@
 
     .expectations = {
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The sunlight turned harsh!" },
+        { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "RoarinMoon's Protosynthesis" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The harsh sunlight activated RoarinMoon's Protosynthesis!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "RoarinMoon's Attack was heightened!" },
     }

@@ -3,8 +3,8 @@
 #include "../../battle_tests.h"
 BEGIN_TEST
 {
-    .battleType = BATTLE_TYPE_DOUBLE,
-    .weather = WEATHER_NONE,
+    .battleType = BATTLE_TYPE_DOUBLES,
+    .weather = FIELD_CONDITION_NONE,
     .fieldCondition = 0,
     .terrain = TERRAIN_NONE,
 
@@ -112,6 +112,7 @@ BEGIN_TEST
 
     .expectations = {
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "It started to rain!" },
+        { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "RoarinMoon's Protosynthesis" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing RoarinMoon used the Booster Energy to activate Protosynthesis!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing RoarinMoon's Attack was heightened!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing RoarinMoon's Attack fell!" },

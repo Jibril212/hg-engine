@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -18,5 +19,4 @@ _031:
     PlayBattleAnimation BATTLER_CATEGORY_MSG_TEMP, BATTLE_ANIMATION_RESTORE_HP
     Wait 
     Call BATTLE_SUBSCRIPT_UPDATE_HP
-    Call BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
     End 

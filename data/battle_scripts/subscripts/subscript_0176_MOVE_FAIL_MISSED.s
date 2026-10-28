@@ -1,8 +1,10 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
 _000:
+    PrintAttackMessage
     // {0} avoided the attack!
     PrintMessage 24, TAG_NICKNAME, BATTLER_CATEGORY_DEFENDER
     Wait 

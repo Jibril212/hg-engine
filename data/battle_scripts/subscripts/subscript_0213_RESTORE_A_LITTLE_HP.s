@@ -1,4 +1,5 @@
-.include "asm/include/battle_commands.inc"
+#include "constants/battle_constants.h"
+.include "battle_commands.inc"
 
 .data
 
@@ -11,5 +12,5 @@ _000:
     PrintMessage 908, TAG_NICKNAME_ITEM, BATTLER_CATEGORY_MSG_TEMP, BATTLER_CATEGORY_MSG_BATTLER_TEMP
     Wait 
     WaitButtonABTime 30
-    Call BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
+    //Call BATTLE_SUBSCRIPT_SWITCH_IN_ABILITY_CHECK
     End 

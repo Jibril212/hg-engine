@@ -1,9 +1,9 @@
-// Test: Mega Sol - Electro Slot and Solar Beam
+// Test: Mega Sol - Electro Shot needs charge turn in rain and Solar Beam skips the charge turn
 #include "../../battle_tests.h"
 BEGIN_TEST
 {
-    .battleType = BATTLE_TYPE_SINGLE,
-    .weather = WEATHER_NONE,
+    .battleType = BATTLE_TYPE_TRAINER,
+    .weather = FIELD_CONDITION_NONE,
     .fieldCondition = 0,
     .terrain = TERRAIN_NONE,
     .playerParty = {
@@ -86,12 +86,11 @@ BEGIN_TEST
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon used Electro Shot!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon absorbed electricity!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon's Sp. Atk rose!" },
-        { .expectationType = EXPECTATION_TYPE_MESSAGE_DOES_NOT_CONTAIN, .expectationValue.message = "fully charged" },
+        { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon became fully charged due to its Power Herb!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon used Solar Beam!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Archaludon absorbed light!" },
         { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "Archaludon's Mega Sol" },
         { .expectationType = EXPECTATION_TYPE_HP_BAR, .expectationValue.hpTaken = { 63, 64, 65, 66, 66, 67, 68, 69, 69, 70, 71, 72, 72, 73, 74, 75 } },
     },
-    .knownFailing = TRUE
 }
 END_TEST
