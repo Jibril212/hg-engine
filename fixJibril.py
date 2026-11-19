@@ -24,6 +24,16 @@ OTHER_STALE_HOOKS = [
      "SpeciesAndFormeToWazaOshieIndex, removed 08d2f932d"),
     ("base/arm9.bin", 0x02000000, 0x0207C29C, "48482a584848118d",
      "UseItemMonAttrChangeCheck_hook, removed 6945ea3eb"),
+    ("base/overlay/overlay_0012.bin", 0x022378C0, 0x022408AC, "381cfbf773fa1149",
+     "load_max_move_num_metronome, removed adbefdc45"),
+]
+
+STALE_OV12_PATCHES = [
+    (0x02251D28, "60b4044d76462e6060bc7ff12bfe014909688f46401d2502", "f8b58cb014980d1c1490159802921590101c1c1c129f139e",
+     "ServerDoTypeCalcMod old-style hook, removed 7e11a8cc6"),
+    (0x02257D9C, "982c3d02", "04cc2602", "sMetronomeMimicMoveBanList repoint, removed 5c4d99094"),
+    (0x02257DF4, "982c3d02", "04cc2602", "sMetronomeMimicMoveBanList repoint, removed 5c4d99094"),
+    (0x02245148, "ba", "67", "byte left by the >256 abilities change, reverted 407dfb326"),
 ]
 
 OLD_ANTIPIRACY_ARM9 = {
@@ -42,35 +52,34 @@ OV123_GOOD_MASKED_MD5 = "05c51fa6102a2c3f5b022f5b9f328232"
 OV123_DECRYPTED_MASKED_MD5 = "51bad6acc950da0ee99cf6d4f7aa6c79"  # from Avalonia DSPRE extractions
 OV123_GOOD_FILE = "ov123.bin"
 OV123_GOOD_FILE_MD5 = "4d63007642ef00cb211942bf6ad46577"
+DSROM_OVERLAYS_YAML = "base_dsrom/arm9_overlays/overlays.yaml"
 
 EVENTS_PATH = "base/root/a/0/3/2"
 
-# Upstream c1df81a6 renumbered Pokemon overworld tags to MON_OVERWORLD_TAG_START + species, so NPCs
-# still using the old tags get no graphics (the map crashes) or show another Pokemon.
-# (event file, overworld index, old tag, new tag)
+# upstream 8c40fe195 moved MON_OVERWORLD_TAG_START from 1050 to 2500
 OVERWORLD_TAG_REMAP = [
-    (57, 4, 561, 1143),  # SPECIES_HAUNTER
-    (57, 10, 1462, 1850),  # SPECIES_MUDSDALE
-    (57, 11, 540, 1128),  # SPECIES_RAPIDASH
-    (57, 12, 680, 1245),  # SPECIES_QUAGSIRE
-    (57, 13, 531, 1123),  # SPECIES_TENTACRUEL
-    (57, 14, 557, 2191),  # SPECIES_MUK_ALOLAN
-    (57, 15, 480, 1081),  # SPECIES_NIDOQUEEN
-    (57, 16, 990, 1504),  # SPECIES_TOXICROAK
-    (60, 1, 586, 1163),  # SPECIES_CHANSEY
-    (66, 2, 586, 1163),  # SPECIES_CHANSEY
-    (94, 2, 586, 1163),  # SPECIES_CHANSEY
-    (119, 6, 871, 1400),  # SPECIES_MILOTIC
-    (153, 2, 586, 1163),  # SPECIES_CHANSEY
-    (155, 0, 754, 1285),  # SPECIES_SMEARGLE
-    (415, 1, 455, 1075),  # SPECIES_PIKACHU
-    (415, 2, 621, 1193),  # SPECIES_SNORLAX
-    (416, 0, 627, 2216),  # SPECIES_MOLTRES_GALARIAN
-    (419, 1, 636, 2528),  # SPECIES_MEGANIUM_OVERWORLD_FEMALE
-    (419, 2, 639, 1207),  # SPECIES_TYPHLOSION
-    (419, 3, 643, 1210),  # SPECIES_FERALIGATR
-    (466, 2, 586, 1163),  # SPECIES_CHANSEY
-    (491, 4, 1084, 1535),  # SPECIES_HEATRAN
+    (57, 4, 561, 1143, 2593),  # SPECIES_HAUNTER
+    (57, 10, 1462, 1850, 3300),  # SPECIES_MUDSDALE
+    (57, 11, 540, 1128, 2578),  # SPECIES_RAPIDASH
+    (57, 12, 680, 1245, 2695),  # SPECIES_QUAGSIRE
+    (57, 13, 531, 1123, 2573),  # SPECIES_TENTACRUEL
+    (57, 14, 557, 2191, 3641),  # SPECIES_MUK_ALOLAN
+    (57, 15, 480, 1081, 2531),  # SPECIES_NIDOQUEEN
+    (57, 16, 990, 1504, 2954),  # SPECIES_TOXICROAK
+    (60, 1, 586, 1163, 2613),  # SPECIES_CHANSEY
+    (66, 2, 586, 1163, 2613),  # SPECIES_CHANSEY
+    (94, 2, 586, 1163, 2613),  # SPECIES_CHANSEY
+    (119, 6, 871, 1400, 2850),  # SPECIES_MILOTIC
+    (153, 2, 586, 1163, 2613),  # SPECIES_CHANSEY
+    (155, 0, 754, 1285, 2735),  # SPECIES_SMEARGLE
+    (415, 1, 455, 1075, 2525),  # SPECIES_PIKACHU
+    (415, 2, 621, 1193, 2643),  # SPECIES_SNORLAX
+    (416, 0, 627, 2216, 3666),  # SPECIES_MOLTRES_GALARIAN
+    (419, 1, 636, 2528, 4037),  # SPECIES_MEGANIUM_OVERWORLD_FEMALE
+    (419, 2, 639, 1207, 2657),  # SPECIES_TYPHLOSION
+    (419, 3, 643, 1210, 2660),  # SPECIES_FERALIGATR
+    (466, 2, 586, 1163, 2613),  # SPECIES_CHANSEY
+    (491, 4, 1084, 1535, 2985),  # SPECIES_HEATRAN
 ]
 
 
@@ -118,6 +127,24 @@ def fix_other_stale_hooks():
             print(f"{path} {addr:#010x}: removed stale hook to {target:#010x} ({name})")
 
 
+def fix_stale_ov12_patches():
+    with open(OV12_PATH, "rb+") as f:
+        data = bytearray(f.read())
+        for addr, stale_hex, vanilla_hex, name in STALE_OV12_PATCHES:
+            stale, vanilla = bytes.fromhex(stale_hex), bytes.fromhex(vanilla_hex)
+            offset = addr - OV12_BASE
+            current = data[offset:offset + len(stale)]
+            if current == vanilla:
+                print(f"ov12 {addr:#010x}: already vanilla")
+            elif current == stale:
+                data[offset:offset + len(stale)] = vanilla
+                print(f"ov12 {addr:#010x}: restored vanilla ({name})")
+            else:
+                print(f"ov12 {addr:#010x}: unexpected bytes {current.hex()}, left as is")
+        f.seek(0)
+        f.write(data)
+
+
 def fix_old_antipiracy():
     with open(ARM9_PATH, "rb+") as f:
         data = bytearray(f.read())
@@ -154,6 +181,14 @@ def masked_md5(data):
     return hashlib.md5(data).hexdigest()
 
 
+def dsrom_reencrypts_ov123():
+    try:
+        with open(DSROM_OVERLAYS_YAML) as f:
+            return "dsprot:" in f.read()
+    except OSError:
+        return False
+
+
 def fix_ov123_file():
     with open(OV123_PATH, "rb") as f:
         data = f.read()
@@ -163,6 +198,9 @@ def fix_ov123_file():
         return
 
     if len(data) == OV123_SIZE and masked_md5(data) == OV123_DECRYPTED_MASKED_MD5:
+        if dsrom_reencrypts_ov123():
+            print(f"{OV123_PATH}: decrypted, as expected: dsrom re-encrypts it on build")
+            return
         problem = "DS Protect already decrypted (copied from an Avalonia DSPRE project)"
     elif len(data) == 3960:
         problem = "truncated to 3960 bytes (a DSPRE 2.3.4 save cut it)"
@@ -194,16 +232,16 @@ def fix_overworld_tags():
     with open(EVENTS_PATH, "rb+") as f:
         narc = bytearray(f.read())
         starts = narc_member_offsets(narc)
-        for event, index, old_tag, new_tag in OVERWORLD_TAG_REMAP:
+        for event, index, old_tag, stale_tag, new_tag in OVERWORLD_TAG_REMAP:
             event_start = starts[event]
             bg_count = struct.unpack_from("<I", narc, event_start)[0]
             tag_offset = event_start + 4 + bg_count * 0x14 + 4 + index * 0x20 + 2
             tag = struct.unpack_from("<H", narc, tag_offset)[0]
             if tag == new_tag:
                 print(f"event {event} npc {index}: already tag {new_tag}")
-            elif tag == old_tag:
+            elif tag in (old_tag, stale_tag):
                 struct.pack_into("<H", narc, tag_offset, new_tag)
-                print(f"event {event} npc {index}: tag {old_tag} -> {new_tag}")
+                print(f"event {event} npc {index}: tag {tag} -> {new_tag}")
             else:
                 print(f"event {event} npc {index}: tag is {tag}, expected {old_tag}, left as is")
         f.seek(0)
@@ -213,6 +251,7 @@ def fix_overworld_tags():
 if __name__ == "__main__":
     fix_ov12()
     fix_other_stale_hooks()
+    fix_stale_ov12_patches()
     fix_old_antipiracy()
     fix_ov123_ram_size()
     fix_ov123_file()
